@@ -4,8 +4,11 @@ Information can be share in a secure manner and interoperability eases organizat
 This system provides benefits to the medical staff as well as the patients due to transparency in how data is handle and secure.
 # Identity Management In Healthcare Contract Workflow
 1: Patient and doctor  will have to register themselves somehow on the contract.
+
 2: doctor can add patient records in contract .
+
 3: patients can access theirs own records and have allows to share their own records.
+
 4: when necessary, the doctor can share the patient`s file to another doctor.
 # Pseudocode 
 1: Func registerDoctor(address _ doctorAddress)
