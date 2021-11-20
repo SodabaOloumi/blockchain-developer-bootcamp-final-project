@@ -45,6 +45,7 @@ contract Healt {
    event userAddition(address user);
    event PatientRecordAdded(string recordName, address patientAddress);
    event Approval(address indexed owner, address indexed viewer, string recordName);
+   event unApproval(address indexed owner, address indexed viewer, string recordName);
 
   
 constructor(){
@@ -81,7 +82,7 @@ constructor(){
  
       //functions
   function addPatient( address _address, string memory _fullName) public returns (bool) {
-   
+         require(user[_address].userAddress == address(0),"Already exist");
     user[_address] = User({
      fullName: _fullName, 
      state: State.Patient, 
@@ -92,7 +93,7 @@ constructor(){
     return true;
   }
   function addDoctor( address _address, string memory _fullName) public returns (bool) {
-   
+    require(user[_address].userAddress == address(0),"Already exist");
     user[_address] = User({
      fullName: _fullName, 
      state: State.Doctor, 
@@ -122,18 +123,7 @@ constructor(){
       emit PatientRecordAdded(_recordName, _patientAddress);
   }
   // getRecord
-//   function getRecord( string memory _recordName)
-//   view public isPatient(msg.sender)
-//   returns(string memory _fullName , address _doctorAddress,address _patientAddress,
-//   string memory _cc , string memory _pi  ,string memory _comment,string memory _mh)
-  
-//  {
- 
-//       Record memory s =record[_recordName][msg.sender];
-       
-//         return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh);
-//   }
-  // ViewPatientRecord
+
   function getRecord(address _address,
   string memory _recordName)view public
   returns(string memory _fullName , address _doctorAddress,address _patientAddress,
@@ -161,7 +151,9 @@ constructor(){
    {
        
        // check the viewner is accsesed 
-       require(user[_viewner].userAddress != address(0));
+       require(user[_viewner].userAddress != address(0),"Viewner not registered");
+       //
+       require(user[_viewner].state == State.Doctor,"Viewner should be a doctor");
        
        // the person calling this function is the patient or doctor ( just is the owner of the record
        // or doctor can grant permission)
@@ -189,6 +181,7 @@ constructor(){
        require(viewRecord[_recordName][_viewner] == true, "No need to revoke!!");
        
       viewRecord[_recordName][_viewner]= false;
+      emit unApproval(msg.sender, _viewner, _recordName);
   }   
 
     

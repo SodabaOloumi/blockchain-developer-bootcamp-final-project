@@ -913,7 +913,8 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-02T09:17:20.457Z",
+  "updatedAt": "2021-11-20T07:52:15.572Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },
