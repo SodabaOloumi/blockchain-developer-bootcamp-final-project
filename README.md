@@ -25,7 +25,6 @@ git clone ....
 ```
 - Run `npm install` in project root to install Truffle build and smart contract dependencies
 - Run local testnet in port `7545` with an Ethereum client, e.g. Ganache
-- 
 - `truffle migrate --network development --reset`
 - In truffle-config.js file , Fill in the following below.
   - MNEMONIC=" your mnemonic here in quotes"
