@@ -42,7 +42,7 @@ git clone ....
 - `vapp`: Project's Vue frontend.
 - `backEnd` : this folder includs contracts folder , test folder , build folder and migrations folder. 
 - `contracts`:  In this folder have InterfacePatientRecords.sol  interface is a contract that guarantees to a client how a class or struct will behave.
-  and have Healt.sol contract it the mian contract.Implements the InterfacePatientRecords.sol  interface ,implement all the methods of InterfacePatientRecords.sol  interface.
+   And contract Healt.sol is the main contract. Implements the InterfacePatientRecords.sol interface, implements all InterfacePatientRecords.sol interface methods.
 - `test` : this is where the tests are stored. The test is written in truffle. The purpose and expected outcome of each test is explained in the code. 
  to run the test
 ```
