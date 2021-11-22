@@ -79,11 +79,11 @@ window.addEventListener("load", async function() {
     await window.ethereum.enable(); // get permission to access accounts
   } else {
     console.warn(
-      "No web3 detected. Falling back to http://192.168.0.1:7545. You should remove this fallback when you deploy live"
+      "No web3 detected. Falling back to http://172.0.0.1:7545. You should remove this fallback when you deploy live"
     );
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     App.web3 = new Web3(
-      new Web3.providers.HttpProvider("http://172.28.160.1")
+      new Web3.providers.HttpProvider("http://172.0.0.1")
     );
   }
 

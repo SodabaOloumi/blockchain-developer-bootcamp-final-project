@@ -14,8 +14,8 @@ describe("Healt Test" , ()=>{
         assert.ok(Healt.address)
     } ),
     it('A user can register once with the provided address and fullname',async()=>{
-        await healt.addPatient(accounts[3] , "sodaba oloumi",{
-            from:accounts[3], 
+        await healt.addPatient(accounts[5] , "sodaba oloumi",{
+            from:accounts[5], 
         });
       
         var User = await healt.user(accounts[3],{
@@ -38,7 +38,7 @@ describe("Healt Test" , ()=>{
           );
           
 
-    }),
+    }).timeout(10000),
     it("should emit a  userAddition event when a user is registered", async () => {
         let eventEmitted = false;
         const tx = await healt.addPatient(accounts[3] , "sodaba oloumi",{
@@ -54,7 +54,7 @@ describe("Healt Test" , ()=>{
           true,
           "registering a user should emit a userAddition  event",
         );
-      }),
+      }).timeout(10000),
     it("Should ckeck restriction , only a doctor can add a record" , async()=> { 
         var doctorAddress= accounts[2];
         var patientAddress=accounts[1];
@@ -134,7 +134,7 @@ describe("Healt Test" , ()=>{
        assert.ok(err)
       }
        
-    }),  
+    }).timeout(10000),  
     it("should emit a  Approval event when a doctor or patient  grant permission a record", async()=>{
       let eventEmitted = false;
       var doctorAddress= accounts[2];
@@ -232,7 +232,7 @@ describe("Healt Test" , ()=>{
   
        
   
-    })
+    }).timeout(10000)
 
    
     

@@ -1,7 +1,16 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.5.16 <0.9.0;
+/// @title Identity Management In Healthcare
+/// @author Sodaba Oloumi - <sodaba.ulomi@gmail.com>
+/// Allows Medical Record System to maintain records of patients in their network.
+/// Records can be accessed by doctor and patient .
+/// A patient's record can be shared ,The doctor and the patient themselves can allow the third person to see the record.
+/// The patient can send the amount of ether or fee to the doctor address
 
-contract Healt {
+import "./InterfacePatientRecords.sol";
+
+
+contract Healt is InterfacePatientRecords  {
  //  variables
   address public owner = msg.sender;
   uint userCount;
@@ -42,17 +51,36 @@ contract Healt {
   /* 
    * Events
    */
+   /// @notice Emitted when a user is registred 
+  /// @param user User address
    event userAddition(address user);
+   
+    /// @notice Emitted when the doctor added a record to the patient's address
+  /// @param recordName record name string
+  /// @param patientAddress patient address 
    event PatientRecordAdded(string recordName, address patientAddress);
+   
+   
+    /// @notice Emitted when the doctor or patient permission the user to view patient's record
+  /// @param owner Owner address 
+  /// @param viewer Viewer address 
+  /// @param recordName record name string
    event Approval(address indexed owner, address indexed viewer, string recordName);
+   
+   
+    /// @notice Emitted when the doctor or patient revork permission the user to view patient's record
+  /// @param owner Owner address 
+  /// @param viewer Viewer address 
+  /// @param recordName record name string
    event unApproval(address indexed owner, address indexed viewer, string recordName);
 
   
-constructor(){
-    owner = msg.sender;
-    userCount =0;
+
+constructor() {
+         owner = msg.sender;
+         userCount =0;
     
-}
+    }
 
   /* 
    * Modifiers
@@ -80,37 +108,42 @@ constructor(){
    } 
 
  
-      //functions
-  function addPatient( address _address, string memory _fullName) public returns (bool) {
-         require(user[_address].userAddress == address(0),"Already exist");
-    user[_address] = User({
+    ///public functions
+    
+     /// The addPatient function registred the new patient user
+  function addPatient( address _patientAddress, string memory _fullName) public override returns (bool) {
+         // A user can only register once
+         require(user[_patientAddress].userAddress == address(0),"Already exist");
+    user[_patientAddress] = User({
      fullName: _fullName, 
      state: State.Patient, 
-     userAddress: _address
+     userAddress: _patientAddress
     });
    
-   emit userAddition(_address);
+   emit userAddition(_patientAddress);
     return true;
   }
-  function addDoctor( address _address, string memory _fullName) public returns (bool) {
-    require(user[_address].userAddress == address(0),"Already exist");
-    user[_address] = User({
+  /// The addDoctor function registred the new doctor user
+  function addDoctor( address _doctorAddress, string memory _fullName) public override returns (bool) {
+    // A user can only register once
+    require(user[_doctorAddress].userAddress == address(0),"Already exist");
+    user[_doctorAddress] = User({
      fullName: _fullName, 
      state: State.Doctor, 
-     userAddress: _address
+     userAddress: _doctorAddress
     });
    
    userCount = userCount + 1;
-   emit userAddition(_address);
+   emit userAddition(_doctorAddress);
     return true;
   }
- 
- // 
- // modifiers to ckeck the user is doctor  
+  /// Allows to add a patient record in the network.
+  // Only a doctor can add record
+ /// modifiers to ckeck the user is doctor  
  // and check the user calling this function is the doctor
   function addRecord(string memory _fullName,address _patientAddress , address _doctorAddress ,
   string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh,
-  string memory _recordName) public isDoctor(_doctorAddress) verifyCaller(_doctorAddress){
+  string memory _recordName) public override isDoctor(_doctorAddress) verifyCaller(_doctorAddress){
      
       require(user[_doctorAddress].userAddress != address(0), "The doctorAddress is not nothing ,first create a address");
       require(user[_patientAddress].userAddress != address(0), "The patientAddress is not nothing ,first create a address");
@@ -125,7 +158,7 @@ constructor(){
   // getRecord
 
   function getRecord(address _address,
-  string memory _recordName)view public
+  string memory _recordName)view public override
   returns(string memory _fullName , address _doctorAddress,address _patientAddress,
   string memory _cc , string memory _pi  ,string memory _comment,string memory _mh)
   {
@@ -133,8 +166,8 @@ constructor(){
        require(record[_recordName][_address].patientAddress == _address 
       ," record is nothing");
       
-      // in 3 state we can get record 1: the patient is the owner of the record 
-      // 2: be doctor an add record 3: have Permission for get record.
+      // in 3 state we can get record 1: the patient 
+      // 2: the doctor 3:  user who have Permission for view record.
       ((record[_recordName][_address].patientAddress == msg.sender )||(record[_recordName][_address].doctorAddress == msg.sender)||
       (viewRecord[_recordName][msg.sender] == true)," the doctor and the user have pemission can view ");
       
@@ -144,10 +177,9 @@ constructor(){
         return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh);
   }
   
-  // grantPermission
-  
+  // doctor or  patient grand  permission the user to view the record 
   function grantPermission(address _patientAddress,address _viewner, string memory _recordName  )
-  public 
+  public override
    {
        
        // check the viewner is accsesed 
@@ -155,8 +187,7 @@ constructor(){
        //
        require(user[_viewner].state == State.Doctor,"Viewner should be a doctor");
        
-       // the person calling this function is the patient or doctor ( just is the owner of the record
-       // or doctor can grant permission)
+       // the person calling this function should be the patient or doctor 
     
        require(( msg.sender == record[_recordName][_patientAddress].patientAddress)||
        (msg.sender ==record[_recordName][_patientAddress].doctorAddress)
@@ -170,10 +201,10 @@ constructor(){
         
     }
     
-    //revorkPermission 
+    // doctor or  patient grand  permission the user to view the record 
   
   function revorkPermission (address _patientAddress,address _viewner, 
-  string memory _recordName) public{
+  string memory _recordName) public override{
        
        require(( msg.sender == record[_recordName][_patientAddress].patientAddress)||
        (msg.sender ==record[_recordName][_patientAddress].doctorAddress)
@@ -182,7 +213,10 @@ constructor(){
        
       viewRecord[_recordName][_viewner]= false;
       emit unApproval(msg.sender, _viewner, _recordName);
-  }   
+  }
+//   function getPatientBalance(address _patientAddress) public view override returns (uint256){
+//       return balanceOf(_patientAddress);
+//   }
 
     
 }
