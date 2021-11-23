@@ -9,7 +9,7 @@ The require  used to check for conditions and throw an exception if the conditio
 
 ## State Variable Default Visibility (SWC-108)
 
-Variables specified as being public, internal or private. Explicitly define visibility for all state variables.
+Variables specified as being public or private. Explicitly define visibility for all state variables.
 
 ## Authorization through tx.origin (SWC-115)
 `tx.origin` should not be used for authorization. Use `msg.sender` instead.
