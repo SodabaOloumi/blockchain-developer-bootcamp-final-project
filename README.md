@@ -21,7 +21,7 @@ This system provides benefits to the medical staff as well as the patients due t
 ### Contracts
 - Clone code 
  ``
-git clone ....
+git clone https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-project.git
 ``
 - Run `npm install` in backEnd root to install Truffle build and smart contract dependencies
 - Run local testnet in port `7545` with an Ethereum client, e.g. Ganache
