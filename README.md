@@ -2,6 +2,12 @@
 Blockchain comes with some properties including transparency, immutability, removal of intermediaries, and decentralization. These properties make it exceptional for creating a system is built that successfully can create, manage and disable patients data. 
 Information can be share in a secure manner .
 This system provides benefits to the medical staff as well as the patients due to transparency in how data is handle and secure.
+Allows Medical Record System to maintain records of patients in their network. Records can be accessed by doctor and patient .
+A patient's record can be shared ,The doctor and the patient themselves can allow the third person to see the record.
+
+My motivation for writing this dapp is because I live in Afghanistan and my country is weak in terms of health system. The medical information is recorded in paper form. Every hospital has its own system. Usually  people of my country travel abroad for treatment . In this case,when  the patient  start their treatment inside the country and later continue the treatment abroad. 
+It is difficult to keep a paper records and it's likely to get lost
+Having a record of patient information in the treatment process can help . This system allows patients access their information anywhere, anytime.
 
 ##  Contract Workflow
 1: Patient and doctor  will have to register themselves on the contract.
