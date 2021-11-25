@@ -11,6 +11,6 @@ git init
 git add -A 
 git commit -m 'deploy'
 git push -f 
-git@github.com:SodabaOloumi/blockchain-developer-bootcamp-final-project.git main:gh-pages
+git@github.com:SodabaOloumi/blockchain-developer-bootcamp-final-project/tree/main/vapp.git main:gh-pages
 
 cd -
