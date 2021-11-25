@@ -1,3 +1,6 @@
+// const dotenv = require("dotenv");
+// dotenv.config();
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -56,7 +59,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
      // Useful for deploying to a public network.
     //  // NB: It's important to wrap the provider as a function.
     rinkeby: {
-     provider: () => new HDWalletProvider(MNEMONIC, "https://rinkeby.infura.io/v3/${process.env.INFURA_API_KEY}"),
+     provider: () => new HDWalletProvider(MNEMONIC,'${process.env.INFURA_URL}'),
      network_id: 4,       // Ropsten's id
      gas: 5500000,        // Ropsten has a lower block limit than mainnet
      confirmations: 2,    // # of confs to wait between deployments. (default: 0)

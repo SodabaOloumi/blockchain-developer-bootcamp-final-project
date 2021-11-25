@@ -212,15 +212,15 @@
     "absolutePath": "project:/contracts/InterfacePatientRecords.sol",
     "exportedSymbols": {
       "InterfacePatientRecords": [
-        658
+        682
       ]
     },
-    "id": 659,
+    "id": 683,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 574,
+        "id": 598,
         "literals": [
           "solidity",
           ">=",
@@ -239,15 +239,15 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 575,
+          "id": 599,
           "nodeType": "StructuredDocumentation",
           "src": "66:429:1",
           "text": "@title Identity Management In Healthcare\n @author Sodaba Oloumi - <sodaba.ulomi@gmail.com>\n Allows Medical Record System to maintain records of patients in their network.\n Records can be accessed by doctor and patient .\n A patient's record can be shared ,The doctor and the patient themselves can allow the third person to see the record.\n The patient can send the amount of ether or fee to the doctor address"
         },
         "fullyImplemented": false,
-        "id": 658,
+        "id": 682,
         "linearizedBaseContracts": [
-          658
+          682
         ],
         "name": "InterfacePatientRecords",
         "nameLocation": "507:23:1",
@@ -255,13 +255,13 @@
         "nodes": [
           {
             "documentation": {
-              "id": 576,
+              "id": 600,
               "nodeType": "StructuredDocumentation",
               "src": "672:48:1",
               "text": "Allows to add a new patient in the network."
             },
             "functionSelector": "db66c060",
-            "id": 585,
+            "id": 609,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -269,17 +269,17 @@
             "nameLocation": "734:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 581,
+              "id": 605,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 578,
+                  "id": 602,
                   "mutability": "mutable",
                   "name": "_address",
                   "nameLocation": "754:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
+                  "scope": 609,
                   "src": "746:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -288,7 +288,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 577,
+                    "id": 601,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "746:7:1",
@@ -302,12 +302,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 580,
+                  "id": 604,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "778:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
+                  "scope": 609,
                   "src": "764:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -316,7 +316,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 579,
+                    "id": 603,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "764:6:1",
@@ -331,17 +331,17 @@
               "src": "744:44:1"
             },
             "returnParameters": {
-              "id": 584,
+              "id": 608,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 583,
+                  "id": 607,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
+                  "scope": 609,
                   "src": "806:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -350,7 +350,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 582,
+                    "id": 606,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "806:4:1",
@@ -364,7 +364,7 @@
               ],
               "src": "805:6:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "725:88:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -372,13 +372,13 @@
           },
           {
             "documentation": {
-              "id": 586,
+              "id": 610,
               "nodeType": "StructuredDocumentation",
               "src": "819:48:1",
               "text": "Allows to add a new patient in the network."
             },
             "functionSelector": "7cf1e445",
-            "id": 595,
+            "id": 619,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -386,17 +386,17 @@
             "nameLocation": "881:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 591,
+              "id": 615,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 588,
+                  "id": 612,
                   "mutability": "mutable",
                   "name": "_address",
                   "nameLocation": "900:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 595,
+                  "scope": 619,
                   "src": "892:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -405,7 +405,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 587,
+                    "id": 611,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "892:7:1",
@@ -419,12 +419,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 590,
+                  "id": 614,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "924:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 595,
+                  "scope": 619,
                   "src": "910:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -433,7 +433,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 589,
+                    "id": 613,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "910:6:1",
@@ -448,17 +448,17 @@
               "src": "890:44:1"
             },
             "returnParameters": {
-              "id": 594,
+              "id": 618,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 593,
+                  "id": 617,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 595,
+                  "scope": 619,
                   "src": "953:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -467,7 +467,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 592,
+                    "id": 616,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "953:4:1",
@@ -481,7 +481,7 @@
               ],
               "src": "952:6:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "872:87:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -489,13 +489,13 @@
           },
           {
             "documentation": {
-              "id": 596,
+              "id": 620,
               "nodeType": "StructuredDocumentation",
               "src": "966:51:1",
               "text": "Allows to add a patient record in the network."
             },
             "functionSelector": "658a0011",
-            "id": 615,
+            "id": 639,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -503,17 +503,17 @@
             "nameLocation": "1035:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 613,
+              "id": 637,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 598,
+                  "id": 622,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "1059:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1045:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -522,7 +522,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 597,
+                    "id": 621,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1045:6:1",
@@ -535,12 +535,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 600,
+                  "id": 624,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1077:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1069:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -549,7 +549,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 599,
+                    "id": 623,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1069:7:1",
@@ -563,12 +563,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 602,
+                  "id": 626,
                   "mutability": "mutable",
                   "name": "_doctorAddress",
                   "nameLocation": "1103:14:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1095:22:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -577,7 +577,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 601,
+                    "id": 625,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1095:7:1",
@@ -591,12 +591,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 604,
+                  "id": 628,
                   "mutability": "mutable",
                   "name": "_cc",
                   "nameLocation": "1136:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1122:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -605,7 +605,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 603,
+                    "id": 627,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1122:6:1",
@@ -618,12 +618,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 606,
+                  "id": 630,
                   "mutability": "mutable",
                   "name": "_pi",
                   "nameLocation": "1155:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1141:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -632,7 +632,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 605,
+                    "id": 629,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1141:6:1",
@@ -645,12 +645,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 608,
+                  "id": 632,
                   "mutability": "mutable",
                   "name": "_comment",
                   "nameLocation": "1174:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1160:22:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -659,7 +659,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 607,
+                    "id": 631,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1160:6:1",
@@ -672,12 +672,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 610,
+                  "id": 634,
                   "mutability": "mutable",
                   "name": "_mh",
                   "nameLocation": "1198:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1184:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -686,7 +686,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 609,
+                    "id": 633,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1184:6:1",
@@ -699,12 +699,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 612,
+                  "id": 636,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "1219:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1205:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -713,7 +713,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 611,
+                    "id": 635,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1205:6:1",
@@ -728,12 +728,12 @@
               "src": "1044:187:1"
             },
             "returnParameters": {
-              "id": 614,
+              "id": 638,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1240:0:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1026:215:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -741,13 +741,13 @@
           },
           {
             "documentation": {
-              "id": 616,
+              "id": 640,
               "nodeType": "StructuredDocumentation",
               "src": "1251:100:1",
               "text": "Allows a doctor and patient and users who have permission to retrieve the record for a patient."
             },
             "functionSelector": "bbaf36b5",
-            "id": 637,
+            "id": 661,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -755,17 +755,17 @@
             "nameLocation": "1365:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 621,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 618,
+                  "id": 642,
                   "mutability": "mutable",
                   "name": "_address",
                   "nameLocation": "1383:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1375:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -774,7 +774,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 617,
+                    "id": 641,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1375:7:1",
@@ -788,12 +788,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 620,
+                  "id": 644,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "1407:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1393:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -802,7 +802,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 619,
+                    "id": 643,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1393:6:1",
@@ -817,17 +817,17 @@
               "src": "1374:45:1"
             },
             "returnParameters": {
-              "id": 636,
+              "id": 660,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 623,
+                  "id": 647,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "1462:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1448:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -836,7 +836,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 622,
+                    "id": 646,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1448:6:1",
@@ -849,12 +849,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 625,
+                  "id": 649,
                   "mutability": "mutable",
                   "name": "_doctorAddress",
                   "nameLocation": "1482:14:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1474:22:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -863,7 +863,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 624,
+                    "id": 648,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1474:7:1",
@@ -877,12 +877,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 627,
+                  "id": 651,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1512:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1504:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -891,7 +891,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 626,
+                    "id": 650,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1504:7:1",
@@ -905,12 +905,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 629,
+                  "id": 653,
                   "mutability": "mutable",
                   "name": "_cc",
                   "nameLocation": "1543:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1529:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -919,7 +919,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 628,
+                    "id": 652,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1529:6:1",
@@ -932,12 +932,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 631,
+                  "id": 655,
                   "mutability": "mutable",
                   "name": "_pi",
                   "nameLocation": "1563:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1549:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -946,7 +946,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 630,
+                    "id": 654,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1549:6:1",
@@ -959,12 +959,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 633,
+                  "id": 657,
                   "mutability": "mutable",
                   "name": "_comment",
                   "nameLocation": "1590:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1576:22:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -973,7 +973,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 632,
+                    "id": 656,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1576:6:1",
@@ -986,12 +986,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 635,
+                  "id": 659,
                   "mutability": "mutable",
                   "name": "_mh",
                   "nameLocation": "1613:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1599:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1000,7 +1000,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 634,
+                    "id": 658,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1599:6:1",
@@ -1014,7 +1014,7 @@
               ],
               "src": "1447:170:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1356:262:1",
             "stateMutability": "view",
             "virtual": false,
@@ -1022,13 +1022,13 @@
           },
           {
             "documentation": {
-              "id": 638,
+              "id": 662,
               "nodeType": "StructuredDocumentation",
               "src": "1624:88:1",
               "text": "Allows a doctor and patient to permission a user to view  the record for a patient."
             },
             "functionSelector": "6b16553e",
-            "id": 647,
+            "id": 671,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1036,17 +1036,17 @@
             "nameLocation": "1726:15:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 645,
+              "id": 669,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 640,
+                  "id": 664,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1750:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 647,
+                  "scope": 671,
                   "src": "1742:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1055,7 +1055,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 639,
+                    "id": 663,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1742:7:1",
@@ -1069,12 +1069,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 642,
+                  "id": 666,
                   "mutability": "mutable",
                   "name": "_viewner",
                   "nameLocation": "1774:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 647,
+                  "scope": 671,
                   "src": "1766:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1083,7 +1083,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 641,
+                    "id": 665,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1766:7:1",
@@ -1097,12 +1097,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 644,
+                  "id": 668,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "1803:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 647,
+                  "scope": 671,
                   "src": "1789:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1111,7 +1111,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 643,
+                    "id": 667,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1789:6:1",
@@ -1126,12 +1126,12 @@
               "src": "1741:76:1"
             },
             "returnParameters": {
-              "id": 646,
+              "id": 670,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1826:0:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1717:110:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1139,13 +1139,13 @@
           },
           {
             "documentation": {
-              "id": 648,
+              "id": 672,
               "nodeType": "StructuredDocumentation",
               "src": "1831:98:1",
               "text": "Allows a doctor and patient to revork permission of a user to view  the record for a patient."
             },
             "functionSelector": "f5a9b019",
-            "id": 657,
+            "id": 681,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1153,17 +1153,17 @@
             "nameLocation": "1943:16:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 655,
+              "id": 679,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 650,
+                  "id": 674,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1969:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 657,
+                  "scope": 681,
                   "src": "1961:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1172,7 +1172,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 649,
+                    "id": 673,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1961:7:1",
@@ -1186,12 +1186,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 652,
+                  "id": 676,
                   "mutability": "mutable",
                   "name": "_viewner",
                   "nameLocation": "1993:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 657,
+                  "scope": 681,
                   "src": "1985:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1200,7 +1200,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 651,
+                    "id": 675,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1985:7:1",
@@ -1214,12 +1214,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 654,
+                  "id": 678,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "2022:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 657,
+                  "scope": 681,
                   "src": "2008:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1228,7 +1228,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 653,
+                    "id": 677,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2008:6:1",
@@ -1243,19 +1243,19 @@
               "src": "1960:74:1"
             },
             "returnParameters": {
-              "id": 656,
+              "id": 680,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2042:0:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1934:109:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 659,
+        "scope": 683,
         "src": "497:1860:1",
         "usedErrors": []
       }
@@ -1266,15 +1266,15 @@
     "absolutePath": "project:/contracts/InterfacePatientRecords.sol",
     "exportedSymbols": {
       "InterfacePatientRecords": [
-        658
+        682
       ]
     },
-    "id": 659,
+    "id": 683,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 574,
+        "id": 598,
         "literals": [
           "solidity",
           ">=",
@@ -1293,15 +1293,15 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 575,
+          "id": 599,
           "nodeType": "StructuredDocumentation",
           "src": "66:429:1",
           "text": "@title Identity Management In Healthcare\n @author Sodaba Oloumi - <sodaba.ulomi@gmail.com>\n Allows Medical Record System to maintain records of patients in their network.\n Records can be accessed by doctor and patient .\n A patient's record can be shared ,The doctor and the patient themselves can allow the third person to see the record.\n The patient can send the amount of ether or fee to the doctor address"
         },
         "fullyImplemented": false,
-        "id": 658,
+        "id": 682,
         "linearizedBaseContracts": [
-          658
+          682
         ],
         "name": "InterfacePatientRecords",
         "nameLocation": "507:23:1",
@@ -1309,13 +1309,13 @@
         "nodes": [
           {
             "documentation": {
-              "id": 576,
+              "id": 600,
               "nodeType": "StructuredDocumentation",
               "src": "672:48:1",
               "text": "Allows to add a new patient in the network."
             },
             "functionSelector": "db66c060",
-            "id": 585,
+            "id": 609,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1323,17 +1323,17 @@
             "nameLocation": "734:10:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 581,
+              "id": 605,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 578,
+                  "id": 602,
                   "mutability": "mutable",
                   "name": "_address",
                   "nameLocation": "754:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
+                  "scope": 609,
                   "src": "746:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1342,7 +1342,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 577,
+                    "id": 601,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "746:7:1",
@@ -1356,12 +1356,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 580,
+                  "id": 604,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "778:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
+                  "scope": 609,
                   "src": "764:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1370,7 +1370,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 579,
+                    "id": 603,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "764:6:1",
@@ -1385,17 +1385,17 @@
               "src": "744:44:1"
             },
             "returnParameters": {
-              "id": 584,
+              "id": 608,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 583,
+                  "id": 607,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 585,
+                  "scope": 609,
                   "src": "806:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1404,7 +1404,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 582,
+                    "id": 606,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "806:4:1",
@@ -1418,7 +1418,7 @@
               ],
               "src": "805:6:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "725:88:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1426,13 +1426,13 @@
           },
           {
             "documentation": {
-              "id": 586,
+              "id": 610,
               "nodeType": "StructuredDocumentation",
               "src": "819:48:1",
               "text": "Allows to add a new patient in the network."
             },
             "functionSelector": "7cf1e445",
-            "id": 595,
+            "id": 619,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1440,17 +1440,17 @@
             "nameLocation": "881:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 591,
+              "id": 615,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 588,
+                  "id": 612,
                   "mutability": "mutable",
                   "name": "_address",
                   "nameLocation": "900:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 595,
+                  "scope": 619,
                   "src": "892:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1459,7 +1459,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 587,
+                    "id": 611,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "892:7:1",
@@ -1473,12 +1473,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 590,
+                  "id": 614,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "924:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 595,
+                  "scope": 619,
                   "src": "910:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1487,7 +1487,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 589,
+                    "id": 613,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "910:6:1",
@@ -1502,17 +1502,17 @@
               "src": "890:44:1"
             },
             "returnParameters": {
-              "id": 594,
+              "id": 618,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 593,
+                  "id": 617,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 595,
+                  "scope": 619,
                   "src": "953:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1521,7 +1521,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 592,
+                    "id": 616,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "953:4:1",
@@ -1535,7 +1535,7 @@
               ],
               "src": "952:6:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "872:87:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1543,13 +1543,13 @@
           },
           {
             "documentation": {
-              "id": 596,
+              "id": 620,
               "nodeType": "StructuredDocumentation",
               "src": "966:51:1",
               "text": "Allows to add a patient record in the network."
             },
             "functionSelector": "658a0011",
-            "id": 615,
+            "id": 639,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1557,17 +1557,17 @@
             "nameLocation": "1035:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 613,
+              "id": 637,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 598,
+                  "id": 622,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "1059:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1045:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1576,7 +1576,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 597,
+                    "id": 621,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1045:6:1",
@@ -1589,12 +1589,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 600,
+                  "id": 624,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1077:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1069:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1603,7 +1603,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 599,
+                    "id": 623,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1069:7:1",
@@ -1617,12 +1617,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 602,
+                  "id": 626,
                   "mutability": "mutable",
                   "name": "_doctorAddress",
                   "nameLocation": "1103:14:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1095:22:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1631,7 +1631,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 601,
+                    "id": 625,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1095:7:1",
@@ -1645,12 +1645,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 604,
+                  "id": 628,
                   "mutability": "mutable",
                   "name": "_cc",
                   "nameLocation": "1136:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1122:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1659,7 +1659,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 603,
+                    "id": 627,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1122:6:1",
@@ -1672,12 +1672,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 606,
+                  "id": 630,
                   "mutability": "mutable",
                   "name": "_pi",
                   "nameLocation": "1155:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1141:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1686,7 +1686,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 605,
+                    "id": 629,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1141:6:1",
@@ -1699,12 +1699,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 608,
+                  "id": 632,
                   "mutability": "mutable",
                   "name": "_comment",
                   "nameLocation": "1174:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1160:22:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1713,7 +1713,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 607,
+                    "id": 631,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1160:6:1",
@@ -1726,12 +1726,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 610,
+                  "id": 634,
                   "mutability": "mutable",
                   "name": "_mh",
                   "nameLocation": "1198:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1184:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1740,7 +1740,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 609,
+                    "id": 633,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1184:6:1",
@@ -1753,12 +1753,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 612,
+                  "id": 636,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "1219:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 615,
+                  "scope": 639,
                   "src": "1205:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1767,7 +1767,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 611,
+                    "id": 635,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1205:6:1",
@@ -1782,12 +1782,12 @@
               "src": "1044:187:1"
             },
             "returnParameters": {
-              "id": 614,
+              "id": 638,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1240:0:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1026:215:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1795,13 +1795,13 @@
           },
           {
             "documentation": {
-              "id": 616,
+              "id": 640,
               "nodeType": "StructuredDocumentation",
               "src": "1251:100:1",
               "text": "Allows a doctor and patient and users who have permission to retrieve the record for a patient."
             },
             "functionSelector": "bbaf36b5",
-            "id": 637,
+            "id": 661,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1809,17 +1809,17 @@
             "nameLocation": "1365:9:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 621,
+              "id": 645,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 618,
+                  "id": 642,
                   "mutability": "mutable",
                   "name": "_address",
                   "nameLocation": "1383:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1375:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1828,7 +1828,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 617,
+                    "id": 641,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1375:7:1",
@@ -1842,12 +1842,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 620,
+                  "id": 644,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "1407:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1393:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1856,7 +1856,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 619,
+                    "id": 643,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1393:6:1",
@@ -1871,17 +1871,17 @@
               "src": "1374:45:1"
             },
             "returnParameters": {
-              "id": 636,
+              "id": 660,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 623,
+                  "id": 647,
                   "mutability": "mutable",
                   "name": "_fullName",
                   "nameLocation": "1462:9:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1448:23:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1890,7 +1890,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 622,
+                    "id": 646,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1448:6:1",
@@ -1903,12 +1903,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 625,
+                  "id": 649,
                   "mutability": "mutable",
                   "name": "_doctorAddress",
                   "nameLocation": "1482:14:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1474:22:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1917,7 +1917,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 624,
+                    "id": 648,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1474:7:1",
@@ -1931,12 +1931,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 627,
+                  "id": 651,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1512:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1504:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1945,7 +1945,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 626,
+                    "id": 650,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1504:7:1",
@@ -1959,12 +1959,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 629,
+                  "id": 653,
                   "mutability": "mutable",
                   "name": "_cc",
                   "nameLocation": "1543:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1529:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1973,7 +1973,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 628,
+                    "id": 652,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1529:6:1",
@@ -1986,12 +1986,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 631,
+                  "id": 655,
                   "mutability": "mutable",
                   "name": "_pi",
                   "nameLocation": "1563:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1549:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2000,7 +2000,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 630,
+                    "id": 654,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1549:6:1",
@@ -2013,12 +2013,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 633,
+                  "id": 657,
                   "mutability": "mutable",
                   "name": "_comment",
                   "nameLocation": "1590:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1576:22:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2027,7 +2027,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 632,
+                    "id": 656,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1576:6:1",
@@ -2040,12 +2040,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 635,
+                  "id": 659,
                   "mutability": "mutable",
                   "name": "_mh",
                   "nameLocation": "1613:3:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 637,
+                  "scope": 661,
                   "src": "1599:17:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2054,7 +2054,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 634,
+                    "id": 658,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1599:6:1",
@@ -2068,7 +2068,7 @@
               ],
               "src": "1447:170:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1356:262:1",
             "stateMutability": "view",
             "virtual": false,
@@ -2076,13 +2076,13 @@
           },
           {
             "documentation": {
-              "id": 638,
+              "id": 662,
               "nodeType": "StructuredDocumentation",
               "src": "1624:88:1",
               "text": "Allows a doctor and patient to permission a user to view  the record for a patient."
             },
             "functionSelector": "6b16553e",
-            "id": 647,
+            "id": 671,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -2090,17 +2090,17 @@
             "nameLocation": "1726:15:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 645,
+              "id": 669,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 640,
+                  "id": 664,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1750:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 647,
+                  "scope": 671,
                   "src": "1742:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2109,7 +2109,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 639,
+                    "id": 663,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1742:7:1",
@@ -2123,12 +2123,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 642,
+                  "id": 666,
                   "mutability": "mutable",
                   "name": "_viewner",
                   "nameLocation": "1774:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 647,
+                  "scope": 671,
                   "src": "1766:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2137,7 +2137,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 641,
+                    "id": 665,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1766:7:1",
@@ -2151,12 +2151,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 644,
+                  "id": 668,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "1803:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 647,
+                  "scope": 671,
                   "src": "1789:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2165,7 +2165,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 643,
+                    "id": 667,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1789:6:1",
@@ -2180,12 +2180,12 @@
               "src": "1741:76:1"
             },
             "returnParameters": {
-              "id": 646,
+              "id": 670,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1826:0:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1717:110:1",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -2193,13 +2193,13 @@
           },
           {
             "documentation": {
-              "id": 648,
+              "id": 672,
               "nodeType": "StructuredDocumentation",
               "src": "1831:98:1",
               "text": "Allows a doctor and patient to revork permission of a user to view  the record for a patient."
             },
             "functionSelector": "f5a9b019",
-            "id": 657,
+            "id": 681,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -2207,17 +2207,17 @@
             "nameLocation": "1943:16:1",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 655,
+              "id": 679,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 650,
+                  "id": 674,
                   "mutability": "mutable",
                   "name": "_patientAddress",
                   "nameLocation": "1969:15:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 657,
+                  "scope": 681,
                   "src": "1961:23:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2226,7 +2226,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 649,
+                    "id": 673,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1961:7:1",
@@ -2240,12 +2240,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 652,
+                  "id": 676,
                   "mutability": "mutable",
                   "name": "_viewner",
                   "nameLocation": "1993:8:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 657,
+                  "scope": 681,
                   "src": "1985:16:1",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -2254,7 +2254,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 651,
+                    "id": 675,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "1985:7:1",
@@ -2268,12 +2268,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 654,
+                  "id": 678,
                   "mutability": "mutable",
                   "name": "_recordName",
                   "nameLocation": "2022:11:1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 657,
+                  "scope": 681,
                   "src": "2008:25:1",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2282,7 +2282,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 653,
+                    "id": 677,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "2008:6:1",
@@ -2297,19 +2297,19 @@
               "src": "1960:74:1"
             },
             "returnParameters": {
-              "id": 656,
+              "id": 680,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2042:0:1"
             },
-            "scope": 658,
+            "scope": 682,
             "src": "1934:109:1",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 659,
+        "scope": 683,
         "src": "497:1860:1",
         "usedErrors": []
       }
@@ -2322,7 +2322,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-22T15:04:03.243Z",
+  "updatedAt": "2021-11-23T18:32:16.587Z",
   "devdoc": {
     "author": "Sodaba Oloumi - <sodaba.ulomi@gmail.com> Allows Medical Record System to maintain records of patients in their network. Records can be accessed by doctor and patient . A patient's record can be shared ,The doctor and the patient themselves can allow the third person to see the record. The patient can send the amount of ether or fee to the doctor address",
     "kind": "dev",

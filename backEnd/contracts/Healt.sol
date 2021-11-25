@@ -2,10 +2,11 @@
 pragma solidity >=0.5.16 <0.9.0;
 /// @title Identity Management In Healthcare
 /// @author Sodaba Oloumi - <sodaba.ulomi@gmail.com>
+///@notice Contract is deployed, tested and run on Rinkeby network.
 /// Allows Medical Record System to maintain records of patients in their network.
 /// Records can be accessed by doctor and patient .
 /// A patient's record can be shared ,The doctor and the patient themselves can allow the third person to see the record.
-/// The patient can send the amount of ether or fee to the doctor address
+
 
 import "./InterfacePatientRecords.sol";
 
@@ -106,6 +107,11 @@ constructor() {
        require(user[_address].state == State.Patient,"User is not patient");
        _;
    } 
+   modifier recordExist(string memory _recordName, address _address){
+       require(record[_recordName][_address].patientAddress != _address ,
+       " record already exist");
+      _;
+   }
 
  
     ///public functions
@@ -143,7 +149,8 @@ constructor() {
  // and check the user calling this function is the doctor
   function addRecord(string memory _fullName,address _patientAddress , address _doctorAddress ,
   string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh,
-  string memory _recordName) public override isDoctor(_doctorAddress) verifyCaller(_doctorAddress){
+  string memory _recordName) public override isDoctor(_doctorAddress) 
+  verifyCaller(_doctorAddress) recordExist(_recordName ,_patientAddress){
      
       require(user[_doctorAddress].userAddress != address(0), "The doctorAddress is not nothing ,first create a address");
       require(user[_patientAddress].userAddress != address(0), "The patientAddress is not nothing ,first create a address");
@@ -214,9 +221,7 @@ constructor() {
       viewRecord[_recordName][_viewner]= false;
       emit unApproval(msg.sender, _viewner, _recordName);
   }
-//   function getPatientBalance(address _patientAddress) public view override returns (uint256){
-//       return balanceOf(_patientAddress);
-//   }
+
 
     
 }
