@@ -10,6 +10,6 @@ cd dist
 git init
 git add -Agit commit -m 'deploy'
 git push -f 
-git@github.com:SodabaOloumi/vapp.git master:gh-pages
+git@github.com:SodabaOloumi/blockchain-developer-bootcamp-final-project.git main:gh-pages
 
 cd -
