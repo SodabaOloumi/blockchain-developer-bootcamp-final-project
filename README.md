@@ -35,7 +35,11 @@ git clone https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-pr
 - In truffle-config.js file , Fill in the following below.
   - MNEMONIC=" your mnemonic here in quotes"
   - INFURA_URL=insert your infura url
+<<<<<<< HEAD
   - `truffle migrate --network -rinkeby`
+=======
+  - `truffle migrate --network rinkeby`
+>>>>>>> 38ab0d8fedad1444b784aa91e4de8a1c379371cf
 - Run tests in /blockchain-developer-bootcamp-final-project/backEnd$ directory `truffle test`
 
 ### Frontend
