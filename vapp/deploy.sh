@@ -10,6 +10,6 @@ cd dist
 git init
 git add -A 
 git commit -m 'deploy'
-git push -f https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-project.git main:gh-pages
+git push -f https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-project/tree/main/vapp main:gh-pages
 
 cd -
