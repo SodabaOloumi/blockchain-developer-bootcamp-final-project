@@ -175,8 +175,10 @@ constructor() {
       
       // in 3 state we can get record 1: the patient 
       // 2: the doctor 3:  user who have Permission for view record.
-      ((record[_recordName][_address].patientAddress == msg.sender )||(record[_recordName][_address].doctorAddress == msg.sender)||
-      (viewRecord[_recordName][msg.sender] == true)," the doctor and the user have pemission can view ");
+     require(record[_recordName][_address].patientAddress == msg.sender || 
+      record[_recordName][_address].doctorAddress == msg.sender ||
+      viewRecord[_recordName][msg.sender] != false,
+      " the doctor and the user have pemission can view ");
       
       // return the record of patient
        Record memory s =record[_recordName][_address];

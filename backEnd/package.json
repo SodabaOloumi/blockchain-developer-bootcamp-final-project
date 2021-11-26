@@ -51,7 +51,7 @@
     "./config.js": "./config.js",
     "./package.json": "./package.json"
   },
-  "homepage": "https://github.com/motdotla/dotenv#readme",
+  "homepage": "https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-project",
   "keywords": [
     "dotenv",
     "env",

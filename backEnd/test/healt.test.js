@@ -14,8 +14,8 @@ describe("Healt Test" , ()=>{
         assert.ok(Healt.address)
     } ),
     it('A user can register once with the provided address and fullname',async()=>{
-        await healt.addPatient(accounts[5] , "sodaba oloumi",{
-            from:accounts[5], 
+        await healt.addPatient(accounts[3] , "sodaba oloumi",{
+            from:accounts[3], 
         });
       
         var User = await healt.user(accounts[3],{
@@ -220,6 +220,9 @@ describe("Healt Test" , ()=>{
     await healt.grantPermission(patientAddress,viewnerAddress,"recordName",{
       from:doctorAddress,
     });
+    await healt.getRecord(patientAddress ,"recordName",{
+      from: viewnerAddress
+  });
     const tx =  await healt.viewRecord("recordName",viewnerAddress,{
             from:accounts[0],
       });
