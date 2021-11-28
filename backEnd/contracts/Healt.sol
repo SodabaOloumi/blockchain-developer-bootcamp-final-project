@@ -9,9 +9,15 @@ pragma solidity >=0.5.16 <0.9.0;
 
 
 import "./InterfacePatientRecords.sol";
+import "./EnumerableMap.sol";
+import "./EnumerableSet.sol";
 
 
 contract Healt is InterfacePatientRecords  {
+   using EnumerableSet for EnumerableSet.UintSet;
+   using EnumerableMap for EnumerableMap.UintToAddressMap;
+   
+   
  //  variables
   address public owner = msg.sender;
   uint userCount;
@@ -37,6 +43,7 @@ contract Healt is InterfacePatientRecords  {
         string comment;
         string mh;
         string recordName;
+        //uint256 recordId;
     }
     
     // mapping
@@ -46,6 +53,12 @@ contract Healt is InterfacePatientRecords  {
   
   // Mapping from record name to approved address
   mapping (string => mapping (address => bool)) public viewRecord;
+
+  // Mapping from holder address to their (enumerable) set of owned tokens
+    mapping (address => EnumerableSet.UintSet) private _holderRecords;
+
+    // Enumerable mapping from token ids to their owners
+    EnumerableMap.UintToAddressMap private _patientRecords;
     
   
   
@@ -149,16 +162,17 @@ constructor() {
  // and check the user calling this function is the doctor
   function addRecord(string memory _fullName,address _patientAddress , address _doctorAddress ,
   string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh,
-  string memory _recordName) public override isDoctor(_doctorAddress) 
+  string memory _recordName ) public override isDoctor(_doctorAddress) 
   verifyCaller(_doctorAddress) recordExist(_recordName ,_patientAddress){
      
       require(user[_doctorAddress].userAddress != address(0), "The doctorAddress is not nothing ,first create a address");
       require(user[_patientAddress].userAddress != address(0), "The patientAddress is not nothing ,first create a address");
       
       Record memory newRecord = Record( _fullName,_patientAddress,
-      
-      _doctorAddress,_cc,_pi,_comment , _mh , _recordName );
+      _doctorAddress,_cc,_pi,_comment , _mh , _recordName  );
          record[_recordName][_patientAddress]=newRecord;
+        // _patientRecords.set(_patientAddress, recordId);
+        // _holderRecords[_patientAddress].add(recordId);
          
       emit PatientRecordAdded(_recordName, _patientAddress);
   }
@@ -167,7 +181,7 @@ constructor() {
   function getRecord(address _address,
   string memory _recordName)view public override
   returns(string memory _fullName , address _doctorAddress,address _patientAddress,
-  string memory _cc , string memory _pi  ,string memory _comment,string memory _mh)
+  string memory _cc , string memory _pi  ,string memory _comment,string memory _mh )
   {
       
        require(record[_recordName][_address].patientAddress == _address 
@@ -183,7 +197,7 @@ constructor() {
       // return the record of patient
        Record memory s =record[_recordName][_address];
        
-        return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh);
+        return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh );
   }
   
   // doctor or  patient grand  permission the user to view the record 
@@ -223,6 +237,15 @@ constructor() {
       viewRecord[_recordName][_viewner]= false;
       emit unApproval(msg.sender, _viewner, _recordName);
   }
+
+ // function recordOf(address owner) public view  override returns (uint256) {
+ //       require(owner != address(0), "ERC721: balance query for the zero address");
+  //      return _holderRecords[owner].length();
+ //   }
+
+ //  function ownerOf(uint256 recordId) public view virtual override returns (address) {
+ //       return _patientRecords.get(recordId, "ERC721: owner query for nonexistent token");
+//}  
 
 
     

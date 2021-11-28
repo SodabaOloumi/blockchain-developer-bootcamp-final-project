@@ -4,7 +4,6 @@ const Healt = artifacts.require('Healt');
 let accounts;
 let healt;
 
-
 beforeEach(async () =>{
     accounts = await web3.eth.getAccounts();
     healt= await Healt.new();  
@@ -21,6 +20,7 @@ describe("Healt Test" , ()=>{
         var User = await healt.user(accounts[3],{
             from:accounts[3],
         });
+        
         assert.equal(
             User[0],
             "sodaba oloumi",
@@ -44,7 +44,7 @@ describe("Healt Test" , ()=>{
         const tx = await healt.addPatient(accounts[3] , "sodaba oloumi",{
             from:accounts[3], 
         });
-  
+      console.log(tx);
         if (tx.logs[0].event == "userAddition") {
           eventEmitted = true;
         }
