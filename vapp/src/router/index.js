@@ -8,7 +8,8 @@ import grantPermission from "../views/grantPermission"
 import revorkPermission from "../views/revorkePermission"
 import getRecord from "../views/getRecord"
 import Register from "../views/registertion"
-
+import recordof from "../views/recordOf"
+import ownerOf from "../views/ownerOfRecord"
 import AddDoctor from "../views/addDoctor"
 
 
@@ -21,6 +22,16 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path:"/ownerOf",
+    name:"ownerOf",
+    component:ownerOf
+  },
+  {
+  path:"/recodOf",
+  name:recordof,
+  component:recordof
   },
   {
     path: "/addDoctor",

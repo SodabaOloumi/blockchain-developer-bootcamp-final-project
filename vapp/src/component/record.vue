@@ -26,10 +26,14 @@
                     <li class="nav-item">
                       <router-link class="nav-link" class-active="active" to="/revorkPermission">Revorke Permission</router-link>
                     </li>
+            
                     <li class="nav-item">
                       <router-link class="nav-link " class-active="active" to="/grantPermission" tabindex="-1" aria-disabled="true"
                         >Grant Permission</router-link
                       >
+                    </li>
+                     <li class="nav-item">
+                      <router-link class="nav-link" class-active="active" to="/ownerOf">Record Holder</router-link>
                     </li>
                   </ul>
                 </div>

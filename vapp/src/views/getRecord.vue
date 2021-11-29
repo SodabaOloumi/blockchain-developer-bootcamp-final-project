@@ -23,6 +23,7 @@
       <p class="card-text" > His/Her Full Name :   {{this.record._fullName}}</p>
       <p class="card-text">His/Her Doctor Address :   {{this.record._doctorAddress}}</p>
       <p class="card-text">His/Her patient Address :  {{this.record._patientAddress}}</p>
+      <p class="card-text">Chief Complient :  {{this.record._cc}}</p>
       <p class="card-text">Present Illness :  {{this.record._pi}}</p>
       <p class="card-text">Any other Comment :  {{this.record._comment}}</p>
       <p class="card-text">Medical History :   {{this.record._mh}}</p>

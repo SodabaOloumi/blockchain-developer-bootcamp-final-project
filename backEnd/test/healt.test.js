@@ -44,7 +44,7 @@ describe("Healt Test" , ()=>{
         const tx = await healt.addPatient(accounts[3] , "sodaba oloumi",{
             from:accounts[3], 
         });
-      console.log(tx);
+     
         if (tx.logs[0].event == "userAddition") {
           eventEmitted = true;
         }
@@ -100,7 +100,7 @@ describe("Healt Test" , ()=>{
             from:accounts[1], 
         });
         
-        const tx = await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh" , "recordName",{
+        const tx = await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh" , "recordName",1,{
             from:accounts[2]
           });
   
@@ -122,7 +122,7 @@ describe("Healt Test" , ()=>{
         await healt.addPatient(accounts[1] , "Sodaba Oloumi",{
             from:accounts[1], 
         });
-         await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh" , "recordName",{
+         await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh" , "recordName", 1 ,{
             from:accounts[2]
           });
        try{
@@ -149,13 +149,12 @@ describe("Healt Test" , ()=>{
       await healt.addPatient(patientAddress,"Sodaba Oloumi",{
         from:patientAddress,
     });
-      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName",{
+      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1 ,{
             from:doctorAddress,
     });
     const tx =  await healt.grantPermission(patientAddress,viewnerAddress,"recordName",{
             from:patientAddress,
       });
-       console.log(tx.logs[0].event);
         if (tx.logs[0].event == "Approval") {
           eventEmitted = true;
         }
@@ -180,7 +179,7 @@ describe("Healt Test" , ()=>{
       await healt.addPatient(patientAddress,"Sodaba Oloumi",{
         from:patientAddress,
     });
-      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName",{
+      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1 ,{
             from:doctorAddress,
     });
       await healt.grantPermission(patientAddress,viewnerAddress,"recordName",{
@@ -189,7 +188,6 @@ describe("Healt Test" , ()=>{
       const tx =  await healt.revorkPermission(patientAddress,viewnerAddress,"recordName",{
         from:patientAddress,
   });
-       console.log(tx.logs[0].event);
         if (tx.logs[0].event == "unApproval") {
           eventEmitted = true;
         }
@@ -214,7 +212,7 @@ describe("Healt Test" , ()=>{
       await healt.addPatient(patientAddress,"Sodaba Oloumi",{
         from:patientAddress,
     });
-      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName",{
+      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1,{
             from:doctorAddress,
     });
     await healt.grantPermission(patientAddress,viewnerAddress,"recordName",{
@@ -226,7 +224,6 @@ describe("Healt Test" , ()=>{
     const tx =  await healt.viewRecord("recordName",viewnerAddress,{
             from:accounts[0],
       });
-      console.log(tx);
       assert.equal(
         tx,
         true,
@@ -235,7 +232,58 @@ describe("Healt Test" , ()=>{
   
        
   
-    }).timeout(10000)
+    }).timeout(10000),
+    it("It should check how many record have been added to the patient's address ",async()=>{
+      var doctorAddress= accounts[2];
+      var patientAddress=accounts[1];
+      await healt.addDoctor(doctorAddress,"Arash Oloumi",{
+          from:doctorAddress
+      });
+      await healt.addPatient(patientAddress,"Sodaba Oloumi",{
+        from:patientAddress,
+    });
+    await healt.addPatient(accounts[6],"Hdai Oloumi",{
+      from:accounts[6],
+  });
+     await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1,{
+            from:doctorAddress,
+    });
+    await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName2", 2,{
+      from:doctorAddress,
+});
+    var lenght =await healt.recordOf(patientAddress,{
+      from:patientAddress
+    })
+     
+     assert.equal(lenght.toString() , 2 ,
+     "The number of records recently added does not match the expected number");
+    }).timeout(20000) ,
+    it("check who is  the patient of record",async()=>{
+      var doctorAddress= accounts[2];
+      var patientAddress1=accounts[1];
+      var patientAddress2=accounts[6];
+      await healt.addDoctor(doctorAddress,"Arash Oloumi",{
+          from:doctorAddress
+      });
+      await healt.addPatient(patientAddress1,"Sodaba Oloumi",{
+        from:patientAddress1,
+    });
+    await healt.addPatient(patientAddress2,"Hdai Oloumi",{
+      from:accounts[6],
+  });
+     await healt.addRecord("Sodaba Oloumi" , patientAddress1, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1,{
+            from:doctorAddress,
+    });
+    await healt.addRecord("Sodaba Oloumi" , patientAddress2, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName2", 2,{
+      from:doctorAddress,
+});
+    var ownerof =await healt.ownerOfRecord( 1 ,{
+      from:patientAddress1
+    })
+     
+     assert.equal(ownerof ,patientAddress1 
+      ," this address is not the owner of the record")
+    }).timeout(20000)
 
    
     

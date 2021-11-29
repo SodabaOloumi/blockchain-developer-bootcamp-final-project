@@ -43,7 +43,7 @@ contract Healt is InterfacePatientRecords  {
         string comment;
         string mh;
         string recordName;
-        //uint256 recordId;
+        uint256 recordId;
     }
     
     // mapping
@@ -162,17 +162,18 @@ constructor() {
  // and check the user calling this function is the doctor
   function addRecord(string memory _fullName,address _patientAddress , address _doctorAddress ,
   string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh,
-  string memory _recordName ) public override isDoctor(_doctorAddress) 
+  string memory _recordName ,uint256 _recordId ) public override isDoctor(_doctorAddress) 
   verifyCaller(_doctorAddress) recordExist(_recordName ,_patientAddress){
      
       require(user[_doctorAddress].userAddress != address(0), "The doctorAddress is not nothing ,first create a address");
       require(user[_patientAddress].userAddress != address(0), "The patientAddress is not nothing ,first create a address");
       
       Record memory newRecord = Record( _fullName,_patientAddress,
-      _doctorAddress,_cc,_pi,_comment , _mh , _recordName  );
+      _doctorAddress,_cc,_pi,_comment , _mh , _recordName  , _recordId );
          record[_recordName][_patientAddress]=newRecord;
-        // _patientRecords.set(_patientAddress, recordId);
-        // _holderRecords[_patientAddress].add(recordId);
+      mint( _patientAddress , _recordId);   
+         
+         
          
       emit PatientRecordAdded(_recordName, _patientAddress);
   }
@@ -181,7 +182,7 @@ constructor() {
   function getRecord(address _address,
   string memory _recordName)view public override
   returns(string memory _fullName , address _doctorAddress,address _patientAddress,
-  string memory _cc , string memory _pi  ,string memory _comment,string memory _mh )
+  string memory _cc , string memory _pi  ,string memory _comment,string memory _mh ,uint256 _recordId)
   {
       
        require(record[_recordName][_address].patientAddress == _address 
@@ -197,7 +198,7 @@ constructor() {
       // return the record of patient
        Record memory s =record[_recordName][_address];
        
-        return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh );
+        return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh , s.recordId );
   }
   
   // doctor or  patient grand  permission the user to view the record 
@@ -238,15 +239,18 @@ constructor() {
       emit unApproval(msg.sender, _viewner, _recordName);
   }
 
- // function recordOf(address owner) public view  override returns (uint256) {
- //       require(owner != address(0), "ERC721: balance query for the zero address");
-  //      return _holderRecords[owner].length();
- //   }
+    function recordOf(address _address) public view  override returns (uint256) {
+        require(_address != address(0), "ERC721: balance query for the zero address");
+        return _holderRecords[_address].length();
+    }
 
- //  function ownerOf(uint256 recordId) public view virtual override returns (address) {
- //       return _patientRecords.get(recordId, "ERC721: owner query for nonexistent token");
-//}  
-
+   function ownerOfRecord(uint256 recordId) public view  override returns (address) {
+        return _patientRecords.get(recordId, "ERC721: owner query for nonexistent token");
+}  
+   function mint(address _address ,uint256 _recordId)internal {
+     _holderRecords[_address].add(_recordId);
+         _patientRecords.set( _recordId,_address);
+   }
 
     
 }

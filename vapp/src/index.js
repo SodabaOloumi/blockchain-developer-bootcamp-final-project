@@ -42,10 +42,10 @@ const App = {
     });
   },
   addRecord: async function( _fullName, _patientAddress , _doctorAddress ,
-    _cc , _pi , _comment , _mh, _recordName) {
+    _cc , _pi , _comment , _mh, _recordName , _recordId) {
     const { addRecord } = this.meta.methods;
     await addRecord( _fullName, _patientAddress , _doctorAddress ,
-      _cc , _pi , _comment , _mh, _recordName).send({
+      _cc , _pi , _comment , _mh, _recordName , _recordId).send({
       from: this.account
     });
   },
@@ -65,6 +65,16 @@ const App = {
     await revorkPermission(_patientAddress, _viewner, _recordName ).send({
       from: this.account
     });
+  },
+  recordOf: async function recordOf(address) {
+    const { recordOf } = this.meta.methods;
+   let record = await recordOf(address).call();
+   return record;
+  },
+  ownerOfRecord: async function ownerOfRecord(recordId) {
+    const { ownerOfRecord } = this.meta.methods;
+   let owner = await ownerOfRecord(recordId).call();
+   return owner;
   },
   
  

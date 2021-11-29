@@ -53,7 +53,7 @@
     </div>
   <div class="form-group ">
       <label for="inputZip">Scan File</label>
-      <input type="file" class="form-control" id="inputZip">
+      <input type="text" class="form-control" id="recordId" name = "recordId" v-model="recordId" placeholder="Enter record's id">
     </div>
   <button type="submit" class="btn btn-dark">Add Record</button>
 </form>
@@ -82,7 +82,8 @@ components:{
       ph: null,
       anyComment: null,
       mh: null,
-      recordName:null
+      recordName:null,
+      recordId:null
     };
   },
    methods: {
@@ -93,16 +94,16 @@ components:{
         doctorAddress: this.doctorAddress,
         cc: this.cc,
         pi: this.pi,
-        
         anyComment: this.anyComment,
         mh: this.mh,
-        recordName:this.recordName
+        recordName:this.recordName,
+        recordId:this.recordId
         
         
       };
   
       App.App.addRecord( R.fullName,R.patientAddress , R.doctorAddress ,
-  R.cc ,R.pi ,R.anyComment ,R.mh,R.recordName);
+  R.cc ,R.pi ,R.anyComment ,R.mh,R.recordName ,R.recordId);
     
       this. patientAddress= null,
       this.doctorAddress= null,
@@ -110,7 +111,8 @@ components:{
       this.pi= null,
       this.anyComment= null,
       this.mh=null,
-      this. recordName=null
+      this. recordName=null,
+      this.recordId
       
     }
   },
