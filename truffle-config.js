@@ -22,7 +22,7 @@
  */
 //  require("dotenv").config
 // const HDWalletProvider = require('@truffle/hdwallet-provider');
-//  const MNEMONIC="";
+//  const MNEMONIC=process.env.MNEMONIC;
  
   module.exports = {
    /**
@@ -57,9 +57,9 @@
      // websockets: true        // Enable EventEmitter interface for web3 (default: false)
      // },
      // Useful for deploying to a public network.
-    // //  // NB: It's important to wrap the provider as a function.
+    //  // NB: It's important to wrap the provider as a function.
     // rinkeby: {
-    //  provider: () => new HDWalletProvider(MNEMONIC,'INFURA_URL'),
+    //  provider: () => new HDWalletProvider(MNEMONIC,'${process.env.INFURA_URL}'),
     //  network_id: 4,       // Ropsten's id
     //  gas: 5500000,        // Ropsten has a lower block limit than mainnet
     //  confirmations: 2,    // # of confs to wait between deployments. (default: 0)
