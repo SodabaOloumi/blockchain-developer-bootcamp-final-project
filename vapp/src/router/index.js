@@ -11,6 +11,7 @@ import Register from "../views/registertion"
 import recordof from "../views/recordOf"
 import ownerOf from "../views/ownerOfRecord"
 import AddDoctor from "../views/addDoctor"
+import about from "../views/about"
 
 
 
@@ -22,6 +23,11 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home
+  },
+  {
+    path: "/about",
+    name: "about",
+    component: about
   },
   {
     path:"/ownerOf",

@@ -14,9 +14,10 @@
 							<router-link class="active" to="/getRecord" ><i class="fa fa-flag-o"></i> <span> Record </span> <span class="menu-arrow"></span></router-link>
 					
 						</li>
-                        <li>
-                            <a href="settings.html"><i class="fa fa-cog"></i> <span>Settings</span></a>
-                        </li>
+                        <li class="submenu">
+							<router-link class="active" to="/about" ><i class="fa fa-flag-o"></i> <span> About </span> <span class="menu-arrow"></span></router-link>
+					
+						</li>
                       
                     </ul>
                 </div>

@@ -35,6 +35,9 @@
                      <li class="nav-item">
                       <router-link class="nav-link" class-active="active" to="/ownerOf">Record Holder</router-link>
                     </li>
+                    <li class="nav-item">
+                      <router-link class="nav-link" class-active="active" to="/recodOf">Number of records</router-link>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -56,9 +59,9 @@ export default {
 }
 .nav-item{
   color: black;
-	font-size: 21px;
+	font-size: 15px;
 	height: auto;
-	padding: 0 20px;
+	padding: 0 15px;
 
 }
 

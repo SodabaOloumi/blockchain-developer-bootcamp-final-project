@@ -8,16 +8,17 @@
         <form @submit.prevent="onSubmit">
 
             <div class="form-group">
-              <label for="exampleInputEmail1">Patient address</label>
+              <label for="exampleInputEmail1">Record Id</label>
               <input type="text" class="form-control" id="recordId"  name="recordId" v-model="recordId" aria-describedby="emailHelp" placeholder="Enter recordId">
             </div>
             <button type="submit" class="btn btn-dark"> Owner</button>
         </form>
+        <br>
 
       <div class="card" style="width:80%; margin-left:10% ; padding-top: 3%" >
           <div class="card-body" >
-             <h3 class="card-title" style="font-family: cursive;">Record details</h3>
-             <p class="card-text" > His/Her Full Name :   {{owner}}</p>
+             <h3 class="card-title" style="font-family: cursive;"> The owner of or patient address this record is</h3>
+             <p class="card-text" >   {{this.owner}}</p>
           </div> 
       </div>
     </div> 
@@ -50,7 +51,7 @@ components:{
         this.owner= await App.App.ownerOfRecord(1); 
         console.log(this.owner);
         this.recordId=null;
-        this.owner=null;
+       
      }
       
     } 

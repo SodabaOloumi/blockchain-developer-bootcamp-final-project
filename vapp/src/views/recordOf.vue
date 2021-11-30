@@ -15,8 +15,8 @@
 <br>
 <div class="card" style="width:80%; margin-left:10% ; padding-top: 3%" >
     <div class="card-body" >
-      <h3 class="card-title" style="font-family: cursive;">Record details</h3>
-      <p class="card-text" > His/Her Full Name :   {{this.record}}</p>
+      <h3 class="card-title" style="font-family: cursive;">The number of records this address is</h3>
+      <p class="card-text" > {{this.record}}</p>
     
      
   </div>
@@ -45,7 +45,7 @@ components:{
   },
     data() {
     return {
-      record:{},
+      record:null,
       address:null
     };
   },

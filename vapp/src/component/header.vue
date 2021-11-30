@@ -4,7 +4,7 @@
 <div class="header">
 			<div class="header-left">
 				<a href="index-2.html" class="logo">
-					<img src="../assets/logo nor.png" width="35" height="35" alt=""> <span>AFGHANHEALT</span>
+					<span>AFGHANHEALT</span>
 				</a>
 			</div>
         </div>
