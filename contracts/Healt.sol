@@ -45,8 +45,10 @@ contract Healt is InterfacePatientRecords  {
         string recordName;
         uint256 recordId;
     }
-    
-    // mapping
+    /* 
+   * Mapping
+   */
+     
   mapping (address => User)public user;
   
   mapping (string => mapping (address => Record))private record;
@@ -54,10 +56,10 @@ contract Healt is InterfacePatientRecords  {
   // Mapping from record name to approved address
   mapping (string => mapping (address => bool)) public viewRecord;
 
-  // Mapping from holder address to their (enumerable) set of owned tokens
+  // Mapping from holder address to their (enumerable) set of owned records
     mapping (address => EnumerableSet.UintSet) private _holderRecords;
 
-    // Enumerable mapping from token ids to their owners
+    // Enumerable mapping from record ids to their owners
     EnumerableMap.UintToAddressMap private _patientRecords;
     
   
@@ -127,9 +129,13 @@ constructor() {
    }
 
  
-    ///public functions
+    /* 
+   * Functions
+   */
     
-     /// The addPatient function registred the new patient user
+     ///@notice  The addPatient function registred the new patient user
+     /// @param _patientAddress The adress of patient
+     /// @param _fullName The name of patient
   function addPatient( address _patientAddress, string memory _fullName) public override returns (bool) {
          // A user can only register once
          require(user[_patientAddress].userAddress == address(0),"Already exist");
@@ -142,7 +148,10 @@ constructor() {
    emit userAddition(_patientAddress);
     return true;
   }
-  /// The addDoctor function registred the new doctor user
+  
+      ///@notice The addDoctor function registred the new doctor user
+     /// @param _doctorAddress The adress of doctor
+     /// @param _fullName The name of doctor
   function addDoctor( address _doctorAddress, string memory _fullName) public override returns (bool) {
     // A user can only register once
     require(user[_doctorAddress].userAddress == address(0),"Already exist");
@@ -156,10 +165,10 @@ constructor() {
    emit userAddition(_doctorAddress);
     return true;
   }
-  /// Allows to add a patient record in the network.
-  // Only a doctor can add record
- /// modifiers to ckeck the user is doctor  
- // and check the user calling this function is the doctor
+      ///@notice Allows to add a patient record in the network.
+     /// Only a doctor can add record
+     /// modifiers to ckeck the user is doctor  
+     /// and check the user calling this function is the doctor
   function addRecord(string memory _fullName,address _patientAddress , address _doctorAddress ,
   string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh,
   string memory _recordName ,uint256 _recordId ) public override isDoctor(_doctorAddress) 
@@ -170,15 +179,12 @@ constructor() {
       
       Record memory newRecord = Record( _fullName,_patientAddress,
       _doctorAddress,_cc,_pi,_comment , _mh , _recordName  , _recordId );
-         record[_recordName][_patientAddress]=newRecord;
+         record[_recordName][_patientAddress]=newRecord; 
       mint( _patientAddress , _recordId);   
-         
-         
          
       emit PatientRecordAdded(_recordName, _patientAddress);
   }
-  // getRecord
-
+  /// @notice Gets the record of the patient.
   function getRecord(address _address,
   string memory _recordName)view public override
   returns(string memory _fullName , address _doctorAddress,address _patientAddress,
@@ -201,7 +207,7 @@ constructor() {
         return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh , s.recordId );
   }
   
-  // doctor or  patient grand  permission the user to view the record 
+  ///@notice doctor or  patient grand  permission the user to view the record. 
   function grantPermission(address _patientAddress,address _viewner, string memory _recordName  )
   public override
    {
@@ -225,7 +231,7 @@ constructor() {
         
     }
     
-    // doctor or  patient grand  permission the user to view the record 
+    //@notice doctor or  patient grand  permission the user to view the record 
   
   function revorkPermission (address _patientAddress,address _viewner, 
   string memory _recordName) public override{

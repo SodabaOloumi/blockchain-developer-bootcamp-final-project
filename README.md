@@ -31,14 +31,14 @@ Having a record of patient information in the treatment process can help . This 
  ``
 git clone https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-project.git
 ``
-- Run `npm install` in backEnd root to install Truffle build and smart contract dependencies
+- Run `npm install` in root to install Truffle build and smart contract dependencies
 - Run local testnet in port `7545` with an Ethereum client, e.g. Ganache
 - `truffle migrate --network development `
 - In truffle-config.js file , Fill in the following below.
   - MNEMONIC=" your mnemonic here in quotes"
   - INFURA_URL=insert your infura url
   - `truffle migrate --network rinkeby`
-- Run tests in /blockchain-developer-bootcamp-final-project/backEnd$ directory `truffle test`
+- Run tests `truffle test`
 
 ### Frontend
 - `cd vapp`
@@ -48,7 +48,6 @@ git clone https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-pr
 
 ## structure
 - `vapp`: Project's Vue frontend.
-- `backEnd` : this folder includs contracts folder , test folder , build folder and migrations folder. 
 - `contracts`:  In this folder, the InterfacePatientRecords.sol interface is a contract that guarantees to a client how a class or struct will behave.
    And contract Healt.sol is the main contract. Implements the InterfacePatientRecords.sol interface, implements all InterfacePatientRecords.sol interface methods.
 - `test` : this is where the tests are stored. The test is written in truffle. The purpose and expected outcome of each test is explained in the code. 
