@@ -238,14 +238,14 @@ constructor() {
       viewRecord[_recordName][_viewner]= false;
       emit unApproval(msg.sender, _viewner, _recordName);
   }
-
+   //with patient address get the  number of records.
     function recordOf(address _address) public view  override returns (uint256) {
-        require(_address != address(0), "ERC721: balance query for the zero address");
+        require(_address != address(0), " record query for the zero address");
         return _holderRecords[_address].length();
     }
-
+   // can get the owner of record with the record ID.
    function ownerOfRecord(uint256 recordId) public view  override returns (address) {
-        return _patientRecords.get(recordId, "ERC721: owner query for nonexistent token");
+        return _patientRecords.get(recordId, " owner query for nonexistent record");
 }  
    function mint(address _address ,uint256 _recordId)internal {
      _holderRecords[_address].add(_recordId);
