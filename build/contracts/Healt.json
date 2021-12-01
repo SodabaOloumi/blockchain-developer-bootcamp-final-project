@@ -99,8 +99,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -129,8 +128,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -154,8 +152,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -315,8 +312,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -381,8 +377,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     },
     {
       "inputs": [
@@ -401,8 +396,7 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function",
-      "constant": true
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"viewer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"recordName\",\"type\":\"string\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"recordName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"patientAddress\",\"type\":\"address\"}],\"name\":\"PatientRecordAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"viewer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"recordName\",\"type\":\"string\"}],\"name\":\"unApproval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"userAddition\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_doctorAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_fullName\",\"type\":\"string\"}],\"name\":\"addDoctor\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_fullName\",\"type\":\"string\"}],\"name\":\"addPatient\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_fullName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_doctorAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_cc\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_pi\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_comment\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_mh\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_recordName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_recordId\",\"type\":\"uint256\"}],\"name\":\"addRecord\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_recordName\",\"type\":\"string\"}],\"name\":\"getRecord\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"_fullName\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_doctorAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_cc\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_pi\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_comment\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_mh\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_recordId\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_viewner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_recordName\",\"type\":\"string\"}],\"name\":\"grantPermission\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"recordId\",\"type\":\"uint256\"}],\"name\":\"ownerOfRecord\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_address\",\"type\":\"address\"}],\"name\":\"recordOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_viewner\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_recordName\",\"type\":\"string\"}],\"name\":\"revorkPermission\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"user\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"fullName\",\"type\":\"string\"},{\"internalType\":\"enum Healt.State\",\"name\":\"state\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"userAddress\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"viewRecord\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"Approval(address,address,string)\":{\"params\":{\"owner\":\"Owner address \",\"recordName\":\"record name string\",\"viewer\":\"Viewer address \"}},\"PatientRecordAdded(string,address)\":{\"params\":{\"patientAddress\":\"patient address \",\"recordName\":\"record name string\"}},\"unApproval(address,address,string)\":{\"params\":{\"owner\":\"Owner address \",\"recordName\":\"record name string\",\"viewer\":\"Viewer address \"}},\"userAddition(address)\":{\"params\":{\"user\":\"User address\"}}},\"kind\":\"dev\",\"methods\":{\"addDoctor(address,string)\":{\"params\":{\"_doctorAddress\":\"The adress of doctor\",\"_fullName\":\"The name of doctor\"}},\"addPatient(address,string)\":{\"params\":{\"_fullName\":\"The name of patient\",\"_patientAddress\":\"The adress of patient\"}}},\"version\":1},\"userdoc\":{\"events\":{\"Approval(address,address,string)\":{\"notice\":\"Emitted when the doctor or patient permission the user to view patient's record\"},\"PatientRecordAdded(string,address)\":{\"notice\":\"Emitted when the doctor added a record to the patient's address\"},\"unApproval(address,address,string)\":{\"notice\":\"Emitted when the doctor or patient revork permission the user to view patient's record\"},\"userAddition(address)\":{\"notice\":\"Emitted when a user is registred \"}},\"kind\":\"user\",\"methods\":{\"addDoctor(address,string)\":{\"notice\":\"The addDoctor function registred the new doctor user\"},\"addPatient(address,string)\":{\"notice\":\"The addPatient function registred the new patient user\"},\"addRecord(string,address,address,string,string,string,string,string,uint256)\":{\"notice\":\"Allows to add a patient record in the network. Only a doctor can add record modifiers to ckeck the user is doctor   and check the user calling this function is the doctor\"},\"getRecord(address,string)\":{\"notice\":\"Gets the record of the patient.\"},\"grantPermission(address,address,string)\":{\"notice\":\"doctor or  patient grand  permission the user to view the record. \"},\"revorkPermission(address,address,string)\":{\"notice\":\"Allows a doctor and patient to revork permission of a user to view  the record for a patient.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/Healt.sol\":\"Healt\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/EnumerableMap.sol\":{\"keccak256\":\"0x4569c487013e0c24667534e59aa5cbe9c1a538f4351faacf85c8cb5089f55dc6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c676c44e50271a88951c21eac18b75c89fca81088fb1dafabad2a902d40b80a2\",\"dweb:/ipfs/Qmb4eRvNarq1XFUzaQAoFyAs4vZTa7dhGMNhXHZGS4wZgz\"]},\"project:/contracts/EnumerableSet.sol\":{\"keccak256\":\"0x1500ade8870696f0175d05656dcefeccd8ff723f3ebca0f32317b485d0c8ffb5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://955f7dbb6e06887ae4a5811951111df74536096ee04a12eec0be0f1f4cebfe14\",\"dweb:/ipfs/QmXYK8dZafQYvsB8wa928htwaZgTMF1ta1YmBXnPUmKWMf\"]},\"project:/contracts/Healt.sol\":{\"keccak256\":\"0xa5b7a330e54b3890dae605d2b73feb204ee0d039ac32d84096de83acfa28f73a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://73ef7cf113d448a5f33a2607f40d8d68cd4f1b9c0090dae1672d7cca7d988bb4\",\"dweb:/ipfs/QmTpLMMnKFu5tGBJrg56F2V8eUoRAvyA2gpmAme11gynsf\"]},\"project:/contracts/InterfacePatientRecords.sol\":{\"keccak256\":\"0x4e3de2a271ecfd0c22afda00840bd08671f54f8f545fe07cebe93e860979c589\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4076459be97cfbb8286e207009cb0778c5ca71214efaf2367cb99d2845cc4892\",\"dweb:/ipfs/QmTDX681snZM11KfyAMBmKAgAGeN8rWaPtVte2u8Vufhdw\"]}},\"version\":1}",
@@ -31571,8 +31565,7 @@
     }
   },
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-30T17:18:06.636Z",
-  "networkType": "ethereum",
+  "updatedAt": "2021-12-01T08:02:03.732Z",
   "devdoc": {
     "events": {
       "Approval(address,address,string)": {

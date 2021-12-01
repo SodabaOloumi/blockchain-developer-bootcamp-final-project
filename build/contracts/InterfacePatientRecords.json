@@ -2814,7 +2814,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-30T17:17:59.232Z",
+  "updatedAt": "2021-12-01T08:02:03.817Z",
   "devdoc": {
     "author": "Sodaba Oloumi - <sodaba.ulomi@gmail.com> Allows Medical Record System to maintain records of patients in their network. Records can be accessed by doctor and patient . A patient's record can be shared ,The doctor and the patient themselves can allow the third person to see the record. The patient can send the amount of ether or fee to the doctor address",
     "kind": "dev",
