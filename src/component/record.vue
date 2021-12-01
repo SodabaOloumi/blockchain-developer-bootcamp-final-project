@@ -24,7 +24,7 @@
                       <router-link class="nav-link" class-active="active" to="/addRecord">Add Record</router-link>
                     </li>
                     <li class="nav-item">
-                      <router-link class="nav-link" class-active="active" to="t/revorkPermission">Revorke Permission</router-link>
+                      <router-link class="nav-link" class-active="active" to="/revorkPermission">Revorke Permission</router-link>
                     </li>
             
                     <li class="nav-item">

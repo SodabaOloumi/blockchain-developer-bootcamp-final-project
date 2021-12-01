@@ -30,7 +30,7 @@ const routes = [
     component:ownerOf
   },
   {
-  path:"/blockchain-developer-bootcamp-final-project/recodOf",
+  path:"/recodOf",
   name:recordof,
   component:recordof
   },
