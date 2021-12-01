@@ -10,5 +10,5 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
-git push -f git@github.com:SodabaOloumi/vapp1.github.io.git master:gh-pages
+git push -f git@github.com:SodabaOloumi/blockchain-developer-bootcamp-final-project.git master:gh-pages
 cd -
