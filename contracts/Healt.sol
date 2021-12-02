@@ -194,9 +194,9 @@ constructor() {
       
       // in 3 state we can get record 1: the patient 
       // 2: the doctor 3:  user who have Permission for view record.
-     require(record[_recordId][_address].patientAddress == msg.sender || 
-      record[_recordId][_address].doctorAddress == msg.sender ||
-      viewRecord[_recordId][msg.sender] == true,
+     require((record[_recordId][_address].patientAddress == msg.sender) || 
+      (record[_recordId][_address].doctorAddress == msg.sender) ||
+      (viewRecord[_recordId][msg.sender] == true),
       " the doctor and the user have pemission can view ");
       
       // return the record of patient
