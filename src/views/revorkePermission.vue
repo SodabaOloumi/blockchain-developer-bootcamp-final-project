@@ -17,7 +17,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Record Name</label>
-    <input type="text" class="form-control" id="recordId" name="recordId" v-model="recordId" aria-describedby="emailHelp" placeholder="Enter record name">
+    <input type="text" class="form-control" id="recordName" name="recordName" v-model="recordName" aria-describedby="emailHelp" placeholder="Enter record name">
   </div>
   <button type="submit" class="btn btn-dark">Revork Permission</button>
 </form>
@@ -40,7 +40,7 @@ components:{
     return {
       patientAddress: null,
       viewner: null,
-      recordId:null,
+      recordName:null,
     };
   },
    methods: {
@@ -48,17 +48,17 @@ components:{
       let p = {
           patientAddress: this.patientAddress,
           viewner: this.viewner,
-          recordId:this.recordId,
+          recordName:this.recordName,
         
         
       };
   
-      App.App.revorkPermission(p.patientAddress, p.viewner , p.recordId);
+      App.App.revorkPermission(p.patientAddress, p.viewner , p.recordName);
      
       
       this.patientAddress = null;
       this.viewner = null;
-      this.recordId=null;
+      this.recordName=null;
       
     }
   },

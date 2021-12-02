@@ -15,7 +15,11 @@
 					
 						</li>
                         <li class="submenu">
+<<<<<<< HEAD
 							<router-link class="active" to="/" ><i class="fa fa-flag-o"></i> <span> About </span> <span class="menu-arrow"></span></router-link>
+=======
+							<router-link class="active" to="/about" ><i class="fa fa-flag-o"></i> <span> About </span> <span class="menu-arrow"></span></router-link>
+>>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
 					
 						</li>
                       

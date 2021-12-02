@@ -47,8 +47,17 @@
     <label for="inputAddress">Medical History</label>
     <textarea type="text" class="form-control" id="mh" name="mh" v-model="mh" placeholder="Medical History"></textarea>
   </div>
+<<<<<<< HEAD
   <div class="form-group ">
       <label for="inputZip">Record Id</label>
+=======
+ <div class="form-group ">
+      <label for="inputZip">recordName</label>
+      <input type="text" class="form-control" id="recordName" name="recordName" v-model="recordName" placeholder="Enter record's name">
+    </div>
+  <div class="form-group ">
+      <label for="inputZip">Record ID</label>
+>>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
       <input type="text" class="form-control" id="recordId" name = "recordId" v-model="recordId" placeholder="Enter record's id">
     </div>
   <button type="submit" class="btn btn-dark">Add Record</button>
@@ -78,6 +87,10 @@ components:{
       ph: null,
       anyComment: null,
       mh: null,
+<<<<<<< HEAD
+=======
+      recordName:null,
+>>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
       recordId:null
     };
   },
@@ -91,13 +104,21 @@ components:{
         pi: this.pi,
         anyComment: this.anyComment,
         mh: this.mh,
+<<<<<<< HEAD
+=======
+        recordName:this.recordName,
+>>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
         recordId:this.recordId
         
         
       };
   
       App.App.addRecord( R.fullName,R.patientAddress , R.doctorAddress ,
+<<<<<<< HEAD
   R.cc ,R.pi ,R.anyComment ,R.mh ,R.recordId);
+=======
+  R.cc ,R.pi ,R.anyComment ,R.mh,R.recordName ,R.recordId);
+>>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
     
       this. patientAddress= null,
       this.doctorAddress= null,
@@ -105,7 +126,12 @@ components:{
       this.pi= null,
       this.anyComment= null,
       this.mh=null,
+<<<<<<< HEAD
       this.recordId = null
+=======
+      this. recordName=null,
+      this.recordId
+>>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
       
     }
   },
