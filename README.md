@@ -17,10 +17,13 @@ Having a record of patient information in the treatment process can help . This 
 3: patients can access theirs own records , they can  permission the  user to view thier record  and can  revorke permission.
 
 4: when necessary, the doctor can share the patient`s file to another doctor.
+
 5: You can get the number of records with the patient's address.
+
 6: Can identify the record holder with the record ID.
 
 ## Web app URL
+
 https://sodabaoloumi.github.io/blockchain-developer-bootcamp-final-project/
 
 ## How to run this project locally:
@@ -41,6 +44,7 @@ git clone https://github.com/SodabaOloumi/blockchain-developer-bootcamp-final-pr
   - MNEMONIC=" your mnemonic here in quotes"
   - INFURA_URL=insert your infura url
   - `truffle migrate --network ropsten `
+
 - Run tests `truffle test`
 
 ### Frontend
