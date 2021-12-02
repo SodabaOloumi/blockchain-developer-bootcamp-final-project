@@ -17,7 +17,7 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Record Name</label>
-    <input type="text" class="form-control" id="recordName" name="recordName" v-model="recordName" aria-describedby="emailHelp" placeholder="Enter record name">
+    <input type="text" class="form-control" id="recordId" name="recordId" v-model="recordId" aria-describedby="emailHelp" placeholder="Enter record ID">
   </div>
   <button type="submit" class="btn btn-dark"> Grant Permission</button>
 </form>
@@ -40,7 +40,7 @@ components:{
     return {
       patientAddress: null,
       viewner: null,
-      recordName:null,
+      recordId:null,
     };
   },
    methods: {
@@ -48,17 +48,17 @@ components:{
       let p = {
           patientAddress: this.patientAddress,
           viewner: this.viewner,
-          recordName:this.recordName,
+          recordId:this.recordId,
         
         
       };
   
-      App.App.grantPermission(p.patientAddress, p.viewner , p.recordName);
+      App.App.grantPermission(p.patientAddress, p.viewner , p.recordId);
      
       
       this.patientAddress = null;
       this.viewner = null;
-      this.recordName=null;
+      this.recordId=null;
       
     }
   },

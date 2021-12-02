@@ -11,8 +11,8 @@
     <input type="text" class="form-control" id="address"  name="address" v-model="address" aria-describedby="emailHelp" placeholder="Enter Patient address">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Record Name</label>
-    <input type="text" class="form-control" id="recordName" name="recordName" v-model="recordName" aria-describedby="emailHelp" placeholder="Enter record name">
+    <label for="exampleInputEmail1">Record ID</label>
+    <input type="text" class="form-control" id="recordId" name="recordId" v-model="recordId" aria-describedby="emailHelp" placeholder="Enter record ID">
   </div>
   <button type="submit" class="btn btn-dark">Get Record</button>
 </form>
@@ -58,7 +58,7 @@ components:{
     data() {
     return {
       address:null,
-      recordName:null,
+      recordId:null,
       
       record:{}
     };
@@ -68,15 +68,15 @@ components:{
       async onSubmit(){
      let p = {
           address: this.address,
-          recordName: this.recordName, 
+          recordId: this.recordId, 
       };
      
-     this.record= await App.App.getRecord(p.address, p.recordName);
+     this.record= await App.App.getRecord(p.address, p.recordId);
     
      console.log(this.record._doctorAddress ,this.record);
       
       this.address=null;
-      this.recordName=null;
+      this.recordId=null;
      }
       
     } 

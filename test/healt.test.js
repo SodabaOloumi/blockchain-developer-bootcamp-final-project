@@ -72,7 +72,7 @@ describe("Healt Test" , ()=>{
     });
     
         try{
-          await healt.addRecord("Sodaba Oloumi" , patientAddress , doctorAddress, "cc" , "pi","commit" , "mh" , "recordName",{
+          await healt.addRecord("Sodaba Oloumi" , patientAddress , doctorAddress, "cc" , "pi","commit" , "mh" , 1,{
               from:doctorAddress,
             });
 
@@ -100,7 +100,7 @@ describe("Healt Test" , ()=>{
             from:accounts[1], 
         });
         
-        const tx = await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh" , "recordName",1,{
+        const tx = await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh",1,{
             from:accounts[2]
           });
   
@@ -122,12 +122,12 @@ describe("Healt Test" , ()=>{
         await healt.addPatient(accounts[1] , "Sodaba Oloumi",{
             from:accounts[1], 
         });
-         await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh" , "recordName", 1 ,{
+         await healt.addRecord("Sodaba Oloumi" , accounts[1] , accounts[2], "cc" , "pi","commit" , "mh" , 1 ,{
             from:accounts[2]
           });
        try{
        
-        await healt.getRecord(accounts[1] ,"recordName",{
+        await healt.getRecord(accounts[1] ,1,{
             from:accounts[1] 
         });
        }catch(err){
@@ -149,10 +149,10 @@ describe("Healt Test" , ()=>{
       await healt.addPatient(patientAddress,"Sodaba Oloumi",{
         from:patientAddress,
     });
-      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1 ,{
+      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , 1 ,{
             from:doctorAddress,
     });
-    const tx =  await healt.grantPermission(patientAddress,viewnerAddress,"recordName",{
+    const tx =  await healt.grantPermission(patientAddress,viewnerAddress,1,{
             from:patientAddress,
       });
         if (tx.logs[0].event == "Approval") {
@@ -179,13 +179,13 @@ describe("Healt Test" , ()=>{
       await healt.addPatient(patientAddress,"Sodaba Oloumi",{
         from:patientAddress,
     });
-      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1 ,{
+      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , 1 ,{
             from:doctorAddress,
     });
-      await healt.grantPermission(patientAddress,viewnerAddress,"recordName",{
+      await healt.grantPermission(patientAddress,viewnerAddress,1,{
             from:patientAddress,
       });
-      const tx =  await healt.revorkPermission(patientAddress,viewnerAddress,"recordName",{
+      const tx =  await healt.revorkPermission(patientAddress,viewnerAddress,1,{
         from:patientAddress,
   });
         if (tx.logs[0].event == "unApproval") {
@@ -212,16 +212,16 @@ describe("Healt Test" , ()=>{
       await healt.addPatient(patientAddress,"Sodaba Oloumi",{
         from:patientAddress,
     });
-      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1,{
+      await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , 1,{
             from:doctorAddress,
     });
-    await healt.grantPermission(patientAddress,viewnerAddress,"recordName",{
+    await healt.grantPermission(patientAddress,viewnerAddress,1,{
       from:doctorAddress,
     });
-    await healt.getRecord(patientAddress ,"recordName",{
+    await healt.getRecord(patientAddress ,1,{
       from: viewnerAddress
   });
-    const tx =  await healt.viewRecord("recordName",viewnerAddress,{
+    const tx =  await healt.viewRecord(1,viewnerAddress,{
             from:accounts[0],
       });
       assert.equal(
@@ -245,10 +245,10 @@ describe("Healt Test" , ()=>{
     await healt.addPatient(accounts[6],"Hdai Oloumi",{
       from:accounts[6],
   });
-     await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1,{
+     await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , 1,{
             from:doctorAddress,
     });
-    await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName2", 2,{
+    await healt.addRecord("Sodaba Oloumi" , patientAddress, doctorAddress , "cc" , "pi","commit" , "mh" , 2,{
       from:doctorAddress,
 });
     var lenght =await healt.recordOf(patientAddress,{
@@ -271,10 +271,10 @@ describe("Healt Test" , ()=>{
     await healt.addPatient(patientAddress2,"Hdai Oloumi",{
       from:accounts[6],
   });
-     await healt.addRecord("Sodaba Oloumi" , patientAddress1, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName", 1,{
+     await healt.addRecord("Sodaba Oloumi" , patientAddress1, doctorAddress , "cc" , "pi","commit" , "mh" , 1,{
             from:doctorAddress,
     });
-    await healt.addRecord("Sodaba Oloumi" , patientAddress2, doctorAddress , "cc" , "pi","commit" , "mh" , "recordName2", 2,{
+    await healt.addRecord("Sodaba Oloumi" , patientAddress2, doctorAddress , "cc" , "pi","commit" , "mh" , 2,{
       from:doctorAddress,
 });
     var ownerof =await healt.ownerOfRecord( 1 ,{

@@ -22,7 +22,7 @@
  */
 //  require("dotenv").config
 const HDWalletProvider = require('@truffle/hdwallet-provider');
- const MNEMONIC="during wear flight divert cargo degree then loan family steel example inspire";
+ const MNEMONIC="";
  
   module.exports = {
    /**
@@ -59,7 +59,7 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
      // Useful for deploying to a public network.
     //  // NB: It's important to wrap the provider as a function.
     ropsten: {
-     provider: () => new HDWalletProvider(MNEMONIC,'https://ropsten.infura.io/v3/54007fb22d114deba0f2d288725cee3e'),
+     provider: () => new HDWalletProvider(MNEMONIC,''),
      network_id: 3,       // Ropsten's id
      gas: 5500000,        // Ropsten has a lower block limit than mainnet
      confirmations: 2,    // # of confs to wait between deployments. (default: 0)

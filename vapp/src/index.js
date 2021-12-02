@@ -42,27 +42,27 @@ const App = {
     });
   },
   addRecord: async function( _fullName, _patientAddress , _doctorAddress ,
-    _cc , _pi , _comment , _mh, _recordName , _recordId) {
+    _cc , _pi , _comment , _mh, _recordId) {
     const { addRecord } = this.meta.methods;
     await addRecord( _fullName, _patientAddress , _doctorAddress ,
-      _cc , _pi , _comment , _mh, _recordName , _recordId).send({
+      _cc , _pi , _comment , _mh, _recordId).send({
       from: this.account
     });
   },
-  getRecord: async function getRecord( _address, _recordName) {
+  getRecord: async function getRecord( _address, _recordId) {
     const { getRecord } = this.meta.methods;
-   let record= await getRecord( _address, _recordName).call();
+   let record= await getRecord( _address, _recordId).call();
    return record;
   },
-  grantPermission: async function grantPermission( _patientAddress, _viewner, _recordName  ) {
+  grantPermission: async function grantPermission( _patientAddress, _viewner, _recordId  ) {
     const { grantPermission } = this.meta.methods;
-    await grantPermission(_patientAddress, _viewner, _recordName ).send({
+    await grantPermission(_patientAddress, _viewner, _recordId ).send({
       from: this.account
     });
   },
-  revorkPermission: async function revorkPermission( _patientAddress, _viewner, _recordName  ) {
+  revorkPermission: async function revorkPermission( _patientAddress, _viewner, _recordId  ) {
     const { revorkPermission } = this.meta.methods;
-    await revorkPermission(_patientAddress, _viewner, _recordName ).send({
+    await revorkPermission(_patientAddress, _viewner, _recordId ).send({
       from: this.account
     });
   },

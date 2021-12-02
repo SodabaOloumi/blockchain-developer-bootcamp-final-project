@@ -47,12 +47,8 @@
     <label for="inputAddress">Medical History</label>
     <textarea type="text" class="form-control" id="mh" name="mh" v-model="mh" placeholder="Medical History"></textarea>
   </div>
- <div class="form-group ">
-      <label for="inputZip">recordName</label>
-      <input type="text" class="form-control" id="recordName" name="recordName" v-model="recordName" placeholder="Enter record's name">
-    </div>
   <div class="form-group ">
-      <label for="inputZip">Scan File</label>
+      <label for="inputZip">Record Id</label>
       <input type="text" class="form-control" id="recordId" name = "recordId" v-model="recordId" placeholder="Enter record's id">
     </div>
   <button type="submit" class="btn btn-dark">Add Record</button>
@@ -82,7 +78,6 @@ components:{
       ph: null,
       anyComment: null,
       mh: null,
-      recordName:null,
       recordId:null
     };
   },
@@ -96,14 +91,13 @@ components:{
         pi: this.pi,
         anyComment: this.anyComment,
         mh: this.mh,
-        recordName:this.recordName,
         recordId:this.recordId
         
         
       };
   
       App.App.addRecord( R.fullName,R.patientAddress , R.doctorAddress ,
-  R.cc ,R.pi ,R.anyComment ,R.mh,R.recordName ,R.recordId);
+  R.cc ,R.pi ,R.anyComment ,R.mh ,R.recordId);
     
       this. patientAddress= null,
       this.doctorAddress= null,
@@ -111,8 +105,7 @@ components:{
       this.pi= null,
       this.anyComment= null,
       this.mh=null,
-      this. recordName=null,
-      this.recordId
+      this.recordId = null
       
     }
   },

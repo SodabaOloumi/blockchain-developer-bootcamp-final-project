@@ -15,7 +15,7 @@
 					
 						</li>
                         <li class="submenu">
-							<router-link class="active" to="/about" ><i class="fa fa-flag-o"></i> <span> About </span> <span class="menu-arrow"></span></router-link>
+							<router-link class="active" to="/" ><i class="fa fa-flag-o"></i> <span> About </span> <span class="menu-arrow"></span></router-link>
 					
 						</li>
                       

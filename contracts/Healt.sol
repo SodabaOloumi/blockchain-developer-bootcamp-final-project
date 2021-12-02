@@ -42,7 +42,6 @@ contract Healt is InterfacePatientRecords  {
         string pi;
         string comment;
         string mh;
-        string recordName;
         uint256 recordId;
     }
     /* 
@@ -51,10 +50,10 @@ contract Healt is InterfacePatientRecords  {
      
   mapping (address => User)public user;
   
-  mapping (string => mapping (address => Record))private record;
+  mapping (uint256 => mapping (address => Record))private record;
   
-  // Mapping from record name to approved address
-  mapping (string => mapping (address => bool)) public viewRecord;
+  // Mapping from record id to approved address
+  mapping (uint256 => mapping (address => bool)) public viewRecord;
 
   // Mapping from holder address to their (enumerable) set of owned records
     mapping (address => EnumerableSet.UintSet) private _holderRecords;
@@ -72,23 +71,23 @@ contract Healt is InterfacePatientRecords  {
    event userAddition(address user);
    
     /// @notice Emitted when the doctor added a record to the patient's address
-  /// @param recordName record name string
+  /// @param recordId record id
   /// @param patientAddress patient address 
-   event PatientRecordAdded(string recordName, address patientAddress);
+   event PatientRecordAdded(uint256 recordId, address patientAddress);
    
    
-    /// @notice Emitted when the doctor or patient permission the user to view patient's record
+  /// @notice Emitted when the doctor or patient permission the user to view patient's record
   /// @param owner Owner address 
   /// @param viewer Viewer address 
-  /// @param recordName record name string
-   event Approval(address indexed owner, address indexed viewer, string recordName);
+  /// @param recordId record id 
+   event Approval(address indexed owner, address indexed viewer, uint256 recordId);
    
    
     /// @notice Emitted when the doctor or patient revork permission the user to view patient's record
   /// @param owner Owner address 
   /// @param viewer Viewer address 
-  /// @param recordName record name string
-   event unApproval(address indexed owner, address indexed viewer, string recordName);
+  /// @param recordId record id 
+   event unApproval(address indexed owner, address indexed viewer, uint256 recordId);
 
   
 
@@ -122,8 +121,8 @@ constructor() {
        require(user[_address].state == State.Patient,"User is not patient");
        _;
    } 
-   modifier recordExist(string memory _recordName, address _address){
-       require(record[_recordName][_address].patientAddress != _address ,
+   modifier recordExist(uint256 _recordId, address _address){
+       require(record[_recordId][_address].patientAddress != _address ,
        " record already exist");
       _;
    }
@@ -170,45 +169,44 @@ constructor() {
      /// modifiers to ckeck the user is doctor  
      /// and check the user calling this function is the doctor
   function addRecord(string memory _fullName,address _patientAddress , address _doctorAddress ,
-  string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh,
-  string memory _recordName ,uint256 _recordId ) public override isDoctor(_doctorAddress) 
-  verifyCaller(_doctorAddress) recordExist(_recordName ,_patientAddress){
+  string memory _cc ,string memory _pi ,string memory _comment ,
+  string memory _mh,uint256 _recordId ) public override isDoctor(_doctorAddress) 
+  verifyCaller(_doctorAddress) recordExist(_recordId ,_patientAddress){
      
       require(user[_doctorAddress].userAddress != address(0), "The doctorAddress is not nothing ,first create a address");
       require(user[_patientAddress].userAddress != address(0), "The patientAddress is not nothing ,first create a address");
       
       Record memory newRecord = Record( _fullName,_patientAddress,
-      _doctorAddress,_cc,_pi,_comment , _mh , _recordName  , _recordId );
-         record[_recordName][_patientAddress]=newRecord; 
+      _doctorAddress,_cc,_pi,_comment , _mh , _recordId );
+         record[_recordId][_patientAddress]=newRecord; 
       mint( _patientAddress , _recordId);   
          
-      emit PatientRecordAdded(_recordName, _patientAddress);
+      emit PatientRecordAdded(_recordId, _patientAddress);
   }
   /// @notice Gets the record of the patient.
-  function getRecord(address _address,
-  string memory _recordName)view public override
+  function getRecord(address _address, uint256 _recordId)view public override
   returns(string memory _fullName , address _doctorAddress,address _patientAddress,
-  string memory _cc , string memory _pi  ,string memory _comment,string memory _mh ,uint256 _recordId)
+  string memory _cc , string memory _pi  ,string memory _comment,string memory _mh )
   {
       
-       require(record[_recordName][_address].patientAddress == _address 
+       require(record[_recordId][_address].patientAddress == _address 
       ," record is nothing");
       
       // in 3 state we can get record 1: the patient 
       // 2: the doctor 3:  user who have Permission for view record.
-     require(record[_recordName][_address].patientAddress == msg.sender || 
-      record[_recordName][_address].doctorAddress == msg.sender ||
-      viewRecord[_recordName][msg.sender] != false,
+     require(record[_recordId][_address].patientAddress == msg.sender || 
+      record[_recordId][_address].doctorAddress == msg.sender ||
+      viewRecord[_recordId][msg.sender] == true,
       " the doctor and the user have pemission can view ");
       
       // return the record of patient
-       Record memory s =record[_recordName][_address];
+       Record memory s =record[_recordId][_address];
        
-        return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh , s.recordId );
+        return(s.fullName,s.patientAddress, s.doctorAddress,s.cc,s.pi,s.comment,s.mh );
   }
   
   ///@notice doctor or  patient grand  permission the user to view the record. 
-  function grantPermission(address _patientAddress,address _viewner, string memory _recordName  )
+  function grantPermission(address _patientAddress,address _viewner, uint256 _recordId  )
   public override
    {
        
@@ -219,30 +217,30 @@ constructor() {
        
        // the person calling this function should be the patient or doctor 
     
-       require(( msg.sender == record[_recordName][_patientAddress].patientAddress)||
-       (msg.sender ==record[_recordName][_patientAddress].doctorAddress)
+       require(( msg.sender == record[_recordId][_patientAddress].patientAddress)||
+       (msg.sender ==record[_recordId][_patientAddress].doctorAddress)
        ,"Only patient and doctor can give permission");
        
-       require(viewRecord[_recordName][_viewner] == false, "Already has viewing rights!!");
+       require(viewRecord[_recordId][_viewner] == false, "Already has viewing rights!!");
        
-        viewRecord[_recordName][_viewner]= true;
+        viewRecord[_recordId][_viewner]= true;
         
-        emit Approval(msg.sender, _viewner, _recordName);
+        emit Approval(msg.sender, _viewner, _recordId);
         
     }
     
     //@notice doctor or  patient grand  permission the user to view the record 
   
   function revorkPermission (address _patientAddress,address _viewner, 
-  string memory _recordName) public override{
+  uint256 _recordId) public override{
        
-       require(( msg.sender == record[_recordName][_patientAddress].patientAddress)||
-       (msg.sender ==record[_recordName][_patientAddress].doctorAddress)
+       require(( msg.sender == record[_recordId][_patientAddress].patientAddress)||
+       (msg.sender ==record[_recordId][_patientAddress].doctorAddress)
        ,"Only patient and doctor can revork permission");
-       require(viewRecord[_recordName][_viewner] == true, "No need to revoke!!");
+       require(viewRecord[_recordId][_viewner] == true, "No need to revoke!!");
        
-      viewRecord[_recordName][_viewner]= false;
-      emit unApproval(msg.sender, _viewner, _recordName);
+      viewRecord[_recordId][_viewner]= false;
+      emit unApproval(msg.sender, _viewner, _recordId);
   }
    //with patient address get the  number of records.
     function recordOf(address _address) public view  override returns (uint256) {

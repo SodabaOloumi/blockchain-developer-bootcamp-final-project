@@ -11,11 +11,6 @@ pragma solidity >=0.5.16 <0.9.0;
 
 interface InterfacePatientRecords {
 
-    /// @dev Fallback function allows to deposit ether.
-  //  Fallback() public payable ;
- 
-   
-
     /*
     * Public functions
     */
@@ -29,22 +24,22 @@ interface InterfacePatientRecords {
     ///  Allows to add a patient record in the network.
    
     function addRecord(string memory _fullName,address _patientAddress , address _doctorAddress ,
-  string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh,
-  string memory _recordName , uint256 _recordId) external;
+  string memory _cc ,string memory _pi ,string memory _comment ,string memory _mh
+   , uint256 _recordId) external;
 
    
     ///  Allows a doctor and patient and users who have permission to retrieve the record for a patient.
-    function getRecord(address _address, string memory _recordName) external view
+    function getRecord(address _address, uint256 _recordId) external view
       returns(string memory _fullName , address _doctorAddress,
       address _patientAddress, string memory _cc , string memory _pi  
-      ,string memory _comment,string memory _mh , uint256 _recordId);
+      ,string memory _comment,string memory _mh);
 
     ///  Allows a doctor and patient to permission a user to view  the record for a patient.
     function grantPermission(address _patientAddress,address _viewner,
-     string memory _recordName  ) external;
+     uint256 _recordId ) external;
    ///  Allows a doctor and patient to revork permission of a user to view  the record for a patient.
     function revorkPermission (address _patientAddress,address _viewner, 
-    string memory _recordName)external;
+    uint256 _recordId)external;
    function recordOf(address _address) external view returns(uint256 _records );
    function ownerOfRecord(uint256 recordId)   external view returns(address _address);
 
