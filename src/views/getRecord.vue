@@ -11,13 +11,8 @@
     <input type="text" class="form-control" id="address"  name="address" v-model="address" aria-describedby="emailHelp" placeholder="Enter Patient address">
   </div>
   <div class="form-group">
-<<<<<<< HEAD
     <label for="exampleInputEmail1">Record ID</label>
     <input type="text" class="form-control" id="recordId" name="recordId" v-model="recordId" aria-describedby="emailHelp" placeholder="Enter record ID">
-=======
-    <label for="exampleInputEmail1">Record Name</label>
-    <input type="text" class="form-control" id="recordName" name="recordName" v-model="recordName" aria-describedby="emailHelp" placeholder="Enter record name">
->>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
   </div>
   <button type="submit" class="btn btn-dark">Get Record</button>
 </form>
@@ -63,11 +58,7 @@ components:{
     data() {
     return {
       address:null,
-<<<<<<< HEAD
       recordId:null,
-=======
-      recordName:null,
->>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
       
       record:{}
     };
@@ -77,26 +68,15 @@ components:{
       async onSubmit(){
      let p = {
           address: this.address,
-<<<<<<< HEAD
           recordId: this.recordId, 
       };
      
      this.record= await App.App.getRecord(p.address, p.recordId);
-=======
-          recordName: this.recordName, 
-      };
-     
-     this.record= await App.App.getRecord(p.address, p.recordName);
->>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
     
      console.log(this.record._doctorAddress ,this.record);
       
       this.address=null;
-<<<<<<< HEAD
       this.recordId=null;
-=======
-      this.recordName=null;
->>>>>>> 814d91f902f61de8c861f5e20bb583d96204da76
      }
       
     } 
