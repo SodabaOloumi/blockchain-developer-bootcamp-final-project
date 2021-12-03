@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import healtContract from "../../build/contracts/Healt.json";
+import healtContract from "../build/contracts/Healt.json";
 const App = {
   web3: null,
   account: null,
