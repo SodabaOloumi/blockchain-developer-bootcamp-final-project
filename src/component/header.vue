@@ -4,7 +4,7 @@
 <div class="header">
 			<div class="header-left">
 				<a href="index-2.html" class="logo">
-					<span>AFGHANHEALT</span>
+					<span>AFGHANHEALTH</span>
 				</a>
 			</div>
         </div>
