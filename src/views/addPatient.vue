@@ -23,7 +23,7 @@
 			    			
 
 			    			<div class="form-group">
-			    				<input type="text" name="fullName" id="fullName" v-model="fullName" class="form-control input-sm" placeholder="Enter Your Ethereum FullName">
+			    				<input type="text" name="fullName" id="fullName" v-model="fullName" class="form-control input-sm" placeholder="Enter Your FullName">
 			    			</div>
 
 			    			

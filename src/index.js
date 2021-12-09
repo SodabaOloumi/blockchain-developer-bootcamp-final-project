@@ -25,10 +25,6 @@ const App = {
     }
   },
 
-  setStatus: function(message) {
-    const status = document.getElementById("status");
-    status.innerHTML = message;
-  },
   addPatient: async function(_address, _fullName) {
     const { addPatient } = this.meta.methods;
     await addPatient(_address,  _fullName).send({
